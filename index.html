@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>大管家儀表板</title>
+  <style>
+    :root {
+      font-family: "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #f1f5f9;
+    }
+    header {
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+    .subtext {
+      color: #475569;
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    article {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+    article h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 6px 4px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+    th {
+      color: #475569;
+      font-weight: 600;
+    }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .ontrack { background: #dcfce7; color: #166534; }
+    .blocked { background: #fee2e2; color: #b91c1c; }
+    .need-action { background: #fef3c7; color: #b45309; }
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .cta {
+      margin-top: 16px;
+      padding: 12px;
+      border: 1px dashed #94a3b8;
+      border-radius: 12px;
+      background: #e0f2fe;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>大管家儀表板</h1>
+    <p class="subtext">即時掌握流程、聊天室與任務狀態，並提供回饋與下一步建議。</p>
+  </header>
+
+  <section class="grid">
+    <article>
+      <h2>流程盤點</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>流程</th>
+            <th>狀態</th>
+            <th>下一步</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>自動化精進專案</td>
+            <td><span class="status-chip need-action">待定義交付</span></td>
+            <td>確認每日輸出格式與報告時間</td>
+          </tr>
+          <tr>
+            <td>買方：陳R（貴峰鐵工廠）</td>
+            <td><span class="status-chip blocked">缺物件</span></td>
+            <td>列出大里/太平符合 400-500坪 的清單</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article>
+      <h2>聊天室追蹤</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>聊天室</th>
+            <th>最新指令</th>
+            <th>負責</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>夢想家</td>
+            <td>建立大管家並產出網頁介面</td>
+            <td>mm</td>
+          </tr>
+          <tr>
+            <td>管家</td>
+            <td>（待更新）</td>
+            <td>大管家</td>
+          </tr>
+          <tr>
+            <td>行銷/財務/資訊</td>
+            <td>（同步後補）</td>
+            <td>大管家</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article>
+      <h2>任務稽核</h2>
+      <ul>
+        <li>SHORT_TERM：1 筆進行中（自動化精進）。</li>
+        <li>買方需求尚未轉進行中，建議立刻納入。</li>
+        <li>尚未建立 master board，需開 Google Sheet。</li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>回饋與建議</h2>
+      <ul>
+        <li>先用大管家 Dashboard 作為每日檢視畫面，並連結 SHORT_TERM / Sheets。</li>
+        <li>設定「48 小時無更新自動 ping」規則，避免流程卡住。</li>
+        <li>把聊天室指令→任務更新這段寫成腳本或模板，降低漏接機率。</li>
+      </ul>
+      <div class="cta">
+        下一步：建立 Google Sheet master board 並把此頁嵌入（或以 GitHub Pages / Vite 部署）。
+      </div>
+    </article>
+  </section>
+</body>
+</html>

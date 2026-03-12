@@ -93,7 +93,7 @@
   <header>
     <h1>大管家儀表板</h1>
     <p class="subtext">掌握任務、流程、聊天室與提醒 — 由大管家統一維運。</p>
-    <p class="subtext">最後更新：2026-03-12 11:42</p>
+    <p class="subtext">最後更新：2026-03-12 15:08</p>
   </header>
 
   <section class="grid">
@@ -110,18 +110,18 @@
         <tbody>
           <tr>
             <td>07:00 早報 + Masterboard 推送</td>
-            <td><span class="status-chip ontrack">已同步 10:44</span></td>
-            <td>持續監控 SHORT_TERM；若有新指令，立即重建板 + push + DM</td>
+            <td><span class="status-chip ontrack">已同步 11:42</span></td>
+            <td>若有新增指派，立即重建並 push，同步回報</td>
           </tr>
           <tr>
             <td>14:00 午間校正</td>
-            <td><span class="status-chip neutral">預定</span></td>
-            <td>比對 SHORT_TERM 與行程表；阻塞即在 DM 提醒</td>
+            <td><span class="status-chip ontrack">完成 15:05</span></td>
+            <td>檢視 SHORT_TERM 無新增阻塞；晚間若有變動再補寫</td>
           </tr>
           <tr>
             <td>19:00 晚間收斂</td>
-            <td><span class="status-chip neutral">預定</span></td>
-            <td>標紅/黃燈、整理隔日早報素材、同步 masterboard</td>
+            <td><span class="status-chip neutral">排程中</span></td>
+            <td>準備紅/黃燈與隔日素材，預計 19:00 後更新 masterboard</td>
           </tr>
         </tbody>
       </table>
@@ -141,17 +141,17 @@
           <tr>
             <td>每日匯報流程建立</td>
             <td><span class="status-chip need-action">優化中</span></td>
-            <td>需驗證 06:50/14:00/19:00 三段式產出與通知流程</td>
+            <td>驗證 06:50/14:00/19:00 三段式輸出；持續蒐集改進點</td>
           </tr>
           <tr>
             <td>Masterboard GitHub 部署</td>
             <td><span class="status-chip ontrack">PAT 可用</span></td>
-            <td>origin PAT 驗證成功，可隨時 push mac2good909777-commits/housekeeper-masterboard</td>
+            <td>origin PAT 驗證成功；push 需帶 `OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES`</td>
           </tr>
           <tr>
             <td>3/12 大雅委託出租/出售追蹤</td>
             <td><span class="status-chip need-action">3/14 DEADLINE</span></td>
-            <td>今日需盤點授權進度，週五前給一次檢核</td>
+            <td>今日無新資訊，待回報授權進度並評估是否需提醒</td>
           </tr>
           <tr>
             <td>記帳本紀錄維護</td>
@@ -168,7 +168,7 @@
         <li>Masterboard PAT：目前 token 可用，如需更換請提供新 PAT。</li>
         <li>Bot 改名：請於 BotFather 將 @mac2nice_bot 調整為 mac2good。</li>
       </ul>
-      <div class="cta">任何新增任務／決策，可直接在本聊告知，我會立即寫入 SHORT_TERM + masterboard。</div>
+      <div class="cta">若要加入新任務或插播午後提醒，直接 DM，我會即時寫入 SHORT_TERM 與 masterboard。</div>
     </article>
 
     <article>
@@ -212,11 +212,11 @@
     </article>
 
     <article>
-      <h2>今日重點 & 提醒</h2>
+      <h2>今日提醒</h2>
       <ul>
-        <li>確認大管家獨立運作，維持 3 段報告節奏。</li>
-        <li>午間/晚間同步前，再次對照行程表與 SHORT_TERM，必要時更新 masterboard。</li>
-        <li>48 小時無更新的任務，會在下一個稽核點自動 ping。</li>
+        <li>大管家 Agent 運作正常，持續監控自動化流程。</li>
+        <li>若大雅委託在 3/13 前仍無更新，建議提前 ping 相關窗口。</li>
+        <li>48 小時無更新任務會在下一個稽核點自動提醒。</li>
       </ul>
     </article>
   </section>

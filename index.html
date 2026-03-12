@@ -83,22 +83,17 @@
       background: #e0f2fe;
       font-size: 14px;
     }
-    .badge {
-      display: inline-block;
-      padding: 2px 6px;
-      border-radius: 6px;
+    .doc-id {
       font-size: 12px;
-      background: #e0f2fe;
-      color: #0c4a6e;
-      margin-left: 6px;
+      color: #64748b;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>大管家儀表板</h1>
-    <p class="subtext">即時掌握流程、聊天室與任務狀態，並提供下一步建議。</p>
-    <p class="subtext">最後更新：2026-03-12 10:44</p>
+    <p class="subtext">掌握任務、流程、聊天室與提醒 — 由大管家統一維運。</p>
+    <p class="subtext">最後更新：2026-03-12 11:42</p>
   </header>
 
   <section class="grid">
@@ -116,17 +111,17 @@
           <tr>
             <td>07:00 早報 + Masterboard 推送</td>
             <td><span class="status-chip ontrack">已同步 10:44</span></td>
-            <td>複製最新 housekeeper_dashboard → repo/index.html，push 後 DM 早報</td>
+            <td>持續監控 SHORT_TERM；若有新指令，立即重建板 + push + DM</td>
           </tr>
           <tr>
             <td>14:00 午間校正</td>
-            <td><span class="status-chip neutral">待時程</span></td>
-            <td>檢查 SHORT_TERM Snapshot，若有阻塞即時 ping</td>
+            <td><span class="status-chip neutral">預定</span></td>
+            <td>比對 SHORT_TERM 與行程表；阻塞即在 DM 提醒</td>
           </tr>
           <tr>
             <td>19:00 晚間收斂</td>
-            <td><span class="status-chip neutral">排程中</span></td>
-            <td>標記完成/待決策，整理紅黃燈與隔日素材</td>
+            <td><span class="status-chip neutral">預定</span></td>
+            <td>標紅/黃燈、整理隔日早報素材、同步 masterboard</td>
           </tr>
         </tbody>
       </table>
@@ -145,23 +140,23 @@
         <tbody>
           <tr>
             <td>每日匯報流程建立</td>
-            <td><span class="status-chip need-action">持續優化</span></td>
-            <td>需驗證 06:50/14:00/19:00 三段式，確定各自輸出</td>
+            <td><span class="status-chip need-action">優化中</span></td>
+            <td>需驗證 06:50/14:00/19:00 三段式產出與通知流程</td>
           </tr>
           <tr>
             <td>Masterboard GitHub 部署</td>
             <td><span class="status-chip ontrack">PAT 可用</span></td>
-            <td>origin PAT 驗證通過，可直接 push 至 mac2good909777-commits/housekeeper-masterboard</td>
+            <td>origin PAT 驗證成功，可隨時 push mac2good909777-commits/housekeeper-masterboard</td>
           </tr>
           <tr>
-            <td>大雅委託授權出租/出售追蹤</td>
-            <td><span class="status-chip need-action">3/14 前檢核</span></td>
-            <td>優先級 2，需整理進度並判斷是否延宕</td>
+            <td>3/12 大雅委託出租/出售追蹤</td>
+            <td><span class="status-chip need-action">3/14 DEADLINE</span></td>
+            <td>今日需盤點授權進度，週五前給一次檢核</td>
           </tr>
           <tr>
             <td>記帳本紀錄維護</td>
-            <td><span class="status-chip neutral">待輸入</span></td>
-            <td>等待每日費用資料，更新 Doc（11KSaH5Y0xbL...）</td>
+            <td><span class="status-chip neutral">等資料</span></td>
+            <td>待每日費用輸入後更新 Doc（11KSaH5Y0xbL...）</td>
           </tr>
         </tbody>
       </table>
@@ -170,19 +165,58 @@
     <article>
       <h2>待 Mac 決策</h2>
       <ul>
-        <li>Bot 改名：需到 BotFather 將 @mac2nice_bot 改成 @mac2good。</li>
-        <li>Masterboard PAT：目前憑證可用，若需替換請提供新 token。</li>
+        <li>Masterboard PAT：目前 token 可用，如需更換請提供新 PAT。</li>
+        <li>Bot 改名：請於 BotFather 將 @mac2nice_bot 調整為 mac2good。</li>
       </ul>
-      <div class="cta">
-        若今日需要在 14:00 前插播臨時任務，請直接 DM，我會一併寫入 SHORT_TERM 與 masterboard。</div>
+      <div class="cta">任何新增任務／決策，可直接在本聊告知，我會立即寫入 SHORT_TERM + masterboard。</div>
     </article>
 
     <article>
-      <h2>提醒 / Next Actions</h2>
+      <h2>群組 / 文件對照</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>群組</th>
+            <th>chat_id</th>
+            <th>Google Doc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>夢想家</td>
+            <td>-5189082842</td>
+            <td class="doc-id">1dzJS1mJvNqn0ynU-LSOmw2he8F7Q8jupyzzy1rU7OzE</td>
+          </tr>
+          <tr>
+            <td>文章資訊收集</td>
+            <td>-5066112336</td>
+            <td class="doc-id">1NTtBz8hmUNFCTE4qV6sWaOePeH2FCnius9n9UiqXGzE</td>
+          </tr>
+          <tr>
+            <td>財務</td>
+            <td>-5131453587</td>
+            <td class="doc-id">1oGaTj_oG_GAGYT08f7XQRxHsBqct-hzcx2wD6nEHIC8</td>
+          </tr>
+          <tr>
+            <td>自動輸入</td>
+            <td>-5252940048</td>
+            <td class="doc-id">1-G7RDo4F7A7NdWRVFtymH1CDOHGN6onBnAA7y-P4kG8</td>
+          </tr>
+          <tr>
+            <td>行銷</td>
+            <td>-5197008668</td>
+            <td class="doc-id">1EWDtqw5SztXec2MtRfljtj0dREu2zpRZbQ49zswnwSU</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article>
+      <h2>今日重點 & 提醒</h2>
       <ul>
-        <li>午間與晚間兩次 snapshot 前，務必確認 SHORT_TERM 與行程表一致。</li>
-        <li>若 48 小時內任務無變動，將在下一次稽核時自動 ping。</li>
-        <li>大雅委託進度建議在 3/13 前先做初步結果，避免 3/14 逾期。</li>
+        <li>確認大管家獨立運作，維持 3 段報告節奏。</li>
+        <li>午間/晚間同步前，再次對照行程表與 SHORT_TERM，必要時更新 masterboard。</li>
+        <li>48 小時無更新的任務，會在下一個稽核點自動 ping。</li>
       </ul>
     </article>
   </section>

@@ -14,56 +14,22 @@
       padding: 20px;
       background: #f1f5f9;
     }
-    header {
-      margin-bottom: 20px;
-    }
-    h1 {
-      margin: 0 0 6px;
-      font-size: 26px;
-    }
-    .subtext {
-      color: #475569;
-      font-size: 14px;
-      margin: 0;
-    }
-    .stack {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    header { margin-bottom: 20px; }
+    h1 { margin: 0 0 6px; font-size: 26px; }
+    .subtext { color: #475569; font-size: 14px; margin: 0; }
+    .stack { display: flex; flex-direction: column; gap: 16px; }
     article {
       background: #fff;
       border-radius: 16px;
       padding: 16px;
       box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
     }
-    article h2 {
-      margin-top: 0;
-      font-size: 18px;
-    }
-    ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 6px;
-      line-height: 1.4;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    th, td {
-      padding: 6px 4px;
-      border-bottom: 1px solid #e2e8f0;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      color: #475569;
-      font-weight: 600;
-    }
+    article h2 { margin-top: 0; font-size: 18px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 6px; line-height: 1.4; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 6px 4px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
+    th { color: #475569; font-weight: 600; }
     .status-chip {
       display: inline-flex;
       align-items: center;
@@ -76,39 +42,48 @@
     .ontrack { background: #dcfce7; color: #166534; }
     .need-action { background: #fef3c7; color: #b45309; }
     .neutral { background: #e2e8f0; color: #475569; }
-    .doc-id {
-      font-size: 12px;
-      color: #64748b;
-      word-break: break-all;
-    }
+    .note { margin-top: 10px; font-size: 13px; color: #475569; }
+    .doc-id { font-size: 12px; color: #64748b; word-break: break-all; }
   </style>
 </head>
 <body>
   <header>
     <h1>大管家儀表板</h1>
-    <p class="subtext">最後更新：2026-03-13 14:12 — 以行動優先順序排列</p>
+    <p class="subtext">最後更新：2026-03-13 14:18 — 行動項目優先呈現</p>
   </header>
 
   <section class="stack">
     <article>
-      <h2>今日提醒（優先處理）</h2>
+      <h2>今日提醒（最優先）</h2>
       <ul>
-        <li>大雅委託授權出租/出售（優先級 2）：距 3/14 檢核 <strong>剩 1 天</strong>，今日 18:00 前需追更新。</li>
-        <li>19:00 晚間收斂：若有新任務/阻塞請在 18:30 前告知，便於列入明日早報。</li>
-        <li>記帳本：仍缺今日費用，請提供金額與科目以便入帳。</li>
+        <li>14:00 逢甲在職專班 — 確認報名狀態（來源：行程表）。</li>
+        <li>大雅委託授權追蹤：距 3/14 檢核 <strong>剩 1 天</strong>，今日 18:00 前需追更新。</li>
+        <li>記帳本：仍缺今日費用資料，待你提供金額/科目後更新。</li>
+        <li>19:00 晚間收斂：若有新任務/阻塞請 18:30 前交辦，晚報會同步。</li>
       </ul>
+    </article>
+
+    <article>
+      <h2>行程 — 今天</h2>
+      <ul>
+        <li>14:00｜逢甲建設研究所在職專班 — 詢問報名狀態。</li>
+      </ul>
+      <p class="note">目前僅能讀取「行程表」試算表；Google Calendar 尚無腳本可抓取。</p>
+    </article>
+
+    <article>
+      <h2>行程 — 明日 + 未來 10 天</h2>
+      <ul>
+        <li>03/14｜大雅委託 — 追蹤是否授權出租／出售。</li>
+        <li>（Google Calendar）等待腳本，尚無可抓取資料。</li>
+      </ul>
+      <p class="note">行程表目前無其他 3/15–3/23 的日期；若有新行程請更新試算表或提供日曆腳本。</p>
     </article>
 
     <article>
       <h2>流程節奏</h2>
       <table>
-        <thead>
-          <tr>
-            <th>流程</th>
-            <th>狀態</th>
-            <th>下一步</th>
-          </tr>
-        </thead>
+        <thead><tr><th>流程</th><th>狀態</th><th>下一步</th></tr></thead>
         <tbody>
           <tr>
             <td>07:00 早報 + masterboard</td>
@@ -123,7 +98,7 @@
           <tr>
             <td>19:00 晚間收斂</td>
             <td><span class="status-chip neutral">排程</span></td>
-            <td>更新紅/黃燈、同步 masterboard 並 DM，你若有額外重點請 18:30 前交辦。</td>
+            <td>更新紅/黃燈、同步 masterboard 並 DM。</td>
           </tr>
         </tbody>
       </table>
@@ -132,18 +107,12 @@
     <article>
       <h2>任務追蹤</h2>
       <table>
-        <thead>
-          <tr>
-            <th>任務</th>
-            <th>狀態</th>
-            <th>備註</th>
-          </tr>
-        </thead>
+        <thead><tr><th>任務</th><th>狀態</th><th>備註</th></tr></thead>
         <tbody>
           <tr>
             <td>大雅委託追蹤</td>
             <td><span class="status-chip need-action">3/14 DEADLINE</span></td>
-            <td>今日需追授權更新，若無回覆明早 09:00 再 ping。</td>
+            <td>今日追更新，若無回覆明早 09:00 再 ping。</td>
           </tr>
           <tr>
             <td>每日匯報流程建立</td>
@@ -151,14 +120,14 @@
             <td>三段式輸出正常，蒐集中長期自動化需求。</td>
           </tr>
           <tr>
-            <td>Masterboard GitHub 部署</td>
+            <td>Masterboard 部署</td>
             <td><span class="status-chip ontrack">PAT OK</span></td>
-            <td>已設定 upstream，若換 PAT 請提供新 token。</td>
+            <td>已綁 upstream，若需換 PAT 請提供新 token。</td>
           </tr>
           <tr>
             <td>記帳本維護</td>
             <td><span class="status-chip neutral">等資料</span></td>
-            <td>等你提供每日費用項目。</td>
+            <td>等待你提供今日費用項目。</td>
           </tr>
         </tbody>
       </table>
@@ -168,47 +137,22 @@
       <h2>待確認 / 指令</h2>
       <ul>
         <li>PAT 是否需要 rotate（目前正常）。</li>
-        <li>Bot 改名：需在 BotFather 把 @mac2nice_bot → mac2good，完成後告訴我更新紀錄。</li>
-        <li>G R 群：尚未接到訊息，麻煩標記我一次確認權限。</li>
+        <li>Bot 改名：請於 BotFather 將 @mac2nice_bot → mac2good。</li>
+        <li>G R 群：尚未接到訊息，麻煩標記我確認權限。</li>
+        <li>若要整合 Google Calendar，請提供日曆腳本或授權流程。</li>
       </ul>
     </article>
 
     <article>
       <h2>群組 & 文件對照（固定資訊）</h2>
       <table>
-        <thead>
-          <tr>
-            <th>群組</th>
-            <th>chat_id</th>
-            <th>Google Doc ID</th>
-          </tr>
-        </thead>
+        <thead><tr><th>群組</th><th>chat_id</th><th>Google Doc ID</th></tr></thead>
         <tbody>
-          <tr>
-            <td>夢想家</td>
-            <td>-5189082842</td>
-            <td class="doc-id">1dzJS1mJvNqn0ynU-LSOmw2he8F7Q8jupyzzy1rU7OzE</td>
-          </tr>
-          <tr>
-            <td>文章資訊收集</td>
-            <td>-5066112336</td>
-            <td class="doc-id">1NTtBz8hmUNFCTE4qV6sWaOePeH2FCnius9n9UiqXGzE</td>
-          </tr>
-          <tr>
-            <td>財務</td>
-            <td>-5131453587</td>
-            <td class="doc-id">1oGaTj_oG_GAGYT08f7XQRxHsBqct-hzcx2wD6nEHIC8</td>
-          </tr>
-          <tr>
-            <td>自動輸入</td>
-            <td>-5252940048</td>
-            <td class="doc-id">1-G7RDo4F7A7NdWRVFtymH1CDOHGN6onBnAA7y-P4kG8</td>
-          </tr>
-          <tr>
-            <td>行銷</td>
-            <td>-5197008668</td>
-            <td class="doc-id">1EWDtqw5SztXec2MtRfljtj0dREu2zpRZbQ49zswnwSU</td>
-          </tr>
+          <tr><td>夢想家</td><td>-5189082842</td><td class="doc-id">1dzJS1mJvNqn0ynU-LSOmw2he8F7Q8jupyzzy1rU7OzE</td></tr>
+          <tr><td>文章資訊收集</td><td>-5066112336</td><td class="doc-id">1NTtBz8hmUNFCTE4qV6sWaOePeH2FCnius9n9UiqXGzE</td></tr>
+          <tr><td>財務</td><td>-5131453587</td><td class="doc-id">1oGaTj_oG_GAGYT08f7XQRxHsBqct-hzcx2wD6nEHIC8</td></tr>
+          <tr><td>自動輸入</td><td>-5252940048</td><td class="doc-id">1-G7RDo4F7A7NdWRVFtymH1CDOHGN6onBnAA7y-P4kG8</td></tr>
+          <tr><td>行銷</td><td>-5197008668</td><td class="doc-id">1EWDtqw5SztXec2MtRfljtj0dREu2zpRZbQ49zswnwSU</td></tr>
         </tbody>
       </table>
     </article>

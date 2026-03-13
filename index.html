@@ -11,34 +11,43 @@
     }
     body {
       margin: 0;
-      padding: 24px;
+      padding: 20px;
       background: #f1f5f9;
     }
     header {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
+      margin: 0 0 6px;
+      font-size: 26px;
     }
     .subtext {
       color: #475569;
       font-size: 14px;
+      margin: 0;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    .stack {
+      display: flex;
+      flex-direction: column;
       gap: 16px;
     }
     article {
       background: #fff;
       border-radius: 16px;
       padding: 16px;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
     }
     article h2 {
       margin-top: 0;
       font-size: 18px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+      line-height: 1.4;
     }
     table {
       width: 100%;
@@ -47,8 +56,8 @@
     }
     th, td {
       padding: 6px 4px;
-      text-align: left;
       border-bottom: 1px solid #e2e8f0;
+      text-align: left;
       vertical-align: top;
     }
     th {
@@ -65,40 +74,33 @@
       font-weight: 600;
     }
     .ontrack { background: #dcfce7; color: #166534; }
-    .blocked { background: #fee2e2; color: #b91c1c; }
     .need-action { background: #fef3c7; color: #b45309; }
     .neutral { background: #e2e8f0; color: #475569; }
-    ul {
-      padding-left: 20px;
-      margin: 0;
-    }
-    li {
-      margin-bottom: 6px;
-    }
-    .cta {
-      margin-top: 16px;
-      padding: 12px;
-      border: 1px dashed #94a3b8;
-      border-radius: 12px;
-      background: #e0f2fe;
-      font-size: 14px;
-    }
     .doc-id {
       font-size: 12px;
       color: #64748b;
+      word-break: break-all;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>大管家儀表板</h1>
-    <p class="subtext">掌握任務、流程、聊天室與提醒 — 由大管家統一維運。</p>
-    <p class="subtext">最後更新：2026-03-13 14:01</p>
+    <p class="subtext">最後更新：2026-03-13 14:12 — 以行動優先順序排列</p>
   </header>
 
-  <section class="grid">
+  <section class="stack">
     <article>
-      <h2>流程排程</h2>
+      <h2>今日提醒（優先處理）</h2>
+      <ul>
+        <li>大雅委託授權出租/出售（優先級 2）：距 3/14 檢核 <strong>剩 1 天</strong>，今日 18:00 前需追更新。</li>
+        <li>19:00 晚間收斂：若有新任務/阻塞請在 18:30 前告知，便於列入明日早報。</li>
+        <li>記帳本：仍缺今日費用，請提供金額與科目以便入帳。</li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>流程節奏</h2>
       <table>
         <thead>
           <tr>
@@ -108,10 +110,22 @@
           </tr>
         </thead>
         <tbody>
-<tr><td>07:00 早報 + Masterboard 推送</td><td><span class="status-chip ontrack">已完成 14:01</span></td><td>SHORT_TERM + 行程 + 摘要同步完成</td></tr>
-<tr><td>14:00 午間校正</td><td><span class="status-chip ontrack">已完成 14:01</span></td><td>任務進度更新完成</td></tr>
-<tr><td>19:00 晚間收斂</td><td><span class="status-chip neutral">排程中</span></td><td>預計 19:00 後更新</td></tr>
-          </tbody>
+          <tr>
+            <td>07:00 早報 + masterboard</td>
+            <td><span class="status-chip ontrack">完成 07:05</span></td>
+            <td>明日 06:50 重新彙整 SHORT_TERM + 行程表。</td>
+          </tr>
+          <tr>
+            <td>14:00 午間校正</td>
+            <td><span class="status-chip ontrack">完成 14:05</span></td>
+            <td>持續監控是否出現阻塞，出現立即回報。</td>
+          </tr>
+          <tr>
+            <td>19:00 晚間收斂</td>
+            <td><span class="status-chip neutral">排程</span></td>
+            <td>更新紅/黃燈、同步 masterboard 並 DM，你若有額外重點請 18:30 前交辦。</td>
+          </tr>
+        </tbody>
       </table>
     </article>
 
@@ -127,46 +141,46 @@
         </thead>
         <tbody>
           <tr>
-            <td>每日匯報流程建立（早報/午報/晚報）</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>06:50/14:00/19:00 三段式</td>
+            <td>大雅委託追蹤</td>
+            <td><span class="status-chip need-action">3/14 DEADLINE</span></td>
+            <td>今日需追授權更新，若無回覆明早 09:00 再 ping。</td>
+          </tr>
+          <tr>
+            <td>每日匯報流程建立</td>
+            <td><span class="status-chip need-action">持續優化</span></td>
+            <td>三段式輸出正常，蒐集中長期自動化需求。</td>
           </tr>
           <tr>
             <td>Masterboard GitHub 部署</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>PAT 已確認可用，維持例行 push</td>
+            <td><span class="status-chip ontrack">PAT OK</span></td>
+            <td>已設定 upstream，若換 PAT 請提供新 token。</td>
           </tr>
           <tr>
-            <td>3/12 追蹤大雅委託授權出租/出售</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>優先級2，3/14 前檢核</td>
-          </tr>
-          <tr>
-            <td>記帳本紀錄維護</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>等待每日費用輸入</td>
+            <td>記帳本維護</td>
+            <td><span class="status-chip neutral">等資料</span></td>
+            <td>等你提供每日費用項目。</td>
           </tr>
         </tbody>
       </table>
     </article>
 
     <article>
-      <h2>待決策 / 指派</h2>
+      <h2>待確認 / 指令</h2>
       <ul>
-        <li>PAT 是否需要更換（目前可用）。</li>
-        <li>Bot 改名：需你在 BotFather 將 @mac2nice_bot → mac2good。</li>
+        <li>PAT 是否需要 rotate（目前正常）。</li>
+        <li>Bot 改名：需在 BotFather 把 @mac2nice_bot → mac2good，完成後告訴我更新紀錄。</li>
+        <li>G R 群：尚未接到訊息，麻煩標記我一次確認權限。</li>
       </ul>
-      <div class="cta">任務有新狀態就直接告訴我，我會即刻寫入 SHORT_TERM + masterboard。</div>
     </article>
 
     <article>
-      <h2>群組 / 文件對照</h2>
+      <h2>群組 & 文件對照（固定資訊）</h2>
       <table>
         <thead>
           <tr>
             <th>群組</th>
             <th>chat_id</th>
-            <th>Google Doc</th>
+            <th>Google Doc ID</th>
           </tr>
         </thead>
         <tbody>
@@ -197,15 +211,6 @@
           </tr>
         </tbody>
       </table>
-    </article>
-
-    <article>
-      <h2>今日提醒</h2>
-      <ul>
-        <li>大雅委託距離檢核剩 1 天，明日午前需確認授權進度。</li>
-        <li>記帳本無資料，若有費用請直接告訴我。</li>
-        <li>明日 06:50 將依最新 SHORT_TERM 產出早報。</li>
-      </ul>
     </article>
   </section>
 </body>

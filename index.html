@@ -9,11 +9,7 @@
       color: #0f172a;
       background: #f8fafc;
     }
-    body {
-      margin: 0;
-      padding: 20px;
-      background: #f1f5f9;
-    }
+    body { margin: 0; padding: 20px; background: #f1f5f9; }
     header { margin-bottom: 20px; }
     h1 { margin: 0 0 6px; font-size: 26px; }
     .subtext { color: #475569; font-size: 14px; margin: 0; }
@@ -49,35 +45,35 @@
 <body>
   <header>
     <h1>大管家儀表板</h1>
-    <p class="subtext">最後更新：2026-03-13 14:18 — 行動項目優先呈現</p>
+    <p class="subtext">最後更新：2026-03-13 16:15 — 行程已同步行程表</p>
   </header>
 
   <section class="stack">
     <article>
       <h2>今日提醒（最優先）</h2>
       <ul>
-        <li>14:00 逢甲在職專班 — 確認報名狀態（來源：行程表）。</li>
-        <li>大雅委託授權追蹤：距 3/14 檢核 <strong>剩 1 天</strong>，今日 18:00 前需追更新。</li>
-        <li>記帳本：仍缺今日費用資料，待你提供金額/科目後更新。</li>
-        <li>19:00 晚間收斂：若有新任務/阻塞請 18:30 前交辦，晚報會同步。</li>
+        <li>大雅委託：已約 3/17(二) 14:30 屋主面談，今天暫停追催，改為會前準備。</li>
+        <li>逢甲在職專班：改為等待 3/17 下午的面試順序通知，今日無需再跟進。</li>
+        <li>記帳本：尚未收到今日費用資料，若有支出請直接告訴我。</li>
+        <li>19:00 晚間收斂：有新增任務/阻塞請 18:30 前交辦，晚報一併整理。</li>
       </ul>
     </article>
 
     <article>
       <h2>行程 — 今天</h2>
       <ul>
-        <li>14:00｜逢甲建設研究所在職專班 — 詢問報名狀態。</li>
+        <li>（剩餘時段無待辦；若有臨時行程，請更新行程表或直接告訴我。）</li>
       </ul>
-      <p class="note">目前僅能讀取「行程表」試算表；Google Calendar 尚無腳本可抓取。</p>
+      <p class="note">行程資料來源：Google 試算表「行程表」。Google Calendar 仍待腳本接通。</p>
     </article>
 
     <article>
       <h2>行程 — 明日 + 未來 10 天</h2>
       <ul>
-        <li>03/14｜大雅委託 — 追蹤是否授權出租／出售。</li>
-        <li>（Google Calendar）等待腳本，尚無可抓取資料。</li>
+        <li>03/17(二) 14:30｜大雅委託 — 屋主面談確認授權（行程表）。</li>
+        <li>03/17(二) 下午｜逢甲建設研究所在職專班 — 面試順序通知（行程表）。</li>
       </ul>
-      <p class="note">行程表目前無其他 3/15–3/23 的日期；若有新行程請更新試算表或提供日曆腳本。</p>
+      <p class="note">行程表目前僅列上述兩項；若需要加入其他事件請更新試算表或提供日曆腳本。</p>
     </article>
 
     <article>
@@ -93,7 +89,7 @@
           <tr>
             <td>14:00 午間校正</td>
             <td><span class="status-chip ontrack">完成 14:05</span></td>
-            <td>持續監控是否出現阻塞，出現立即回報。</td>
+            <td>若有新阻塞即刻標記。</td>
           </tr>
           <tr>
             <td>19:00 晚間收斂</td>
@@ -111,8 +107,8 @@
         <tbody>
           <tr>
             <td>大雅委託追蹤</td>
-            <td><span class="status-chip need-action">3/14 DEADLINE</span></td>
-            <td>今日追更新，若無回覆明早 09:00 再 ping。</td>
+            <td><span class="status-chip ontrack">已安排</span></td>
+            <td>面談 3/17 14:30，今日暫停追催。</td>
           </tr>
           <tr>
             <td>每日匯報流程建立</td>
@@ -127,7 +123,7 @@
           <tr>
             <td>記帳本維護</td>
             <td><span class="status-chip neutral">等資料</span></td>
-            <td>等待你提供今日費用項目。</td>
+            <td>等待今日費用項目。</td>
           </tr>
         </tbody>
       </table>
@@ -136,10 +132,9 @@
     <article>
       <h2>待確認 / 指令</h2>
       <ul>
-        <li>PAT 是否需要 rotate（目前正常）。</li>
         <li>Bot 改名：請於 BotFather 將 @mac2nice_bot → mac2good。</li>
-        <li>G R 群：尚未接到訊息，麻煩標記我確認權限。</li>
         <li>若要整合 Google Calendar，請提供日曆腳本或授權流程。</li>
+        <li>G R 群：仍未收到訊息，麻煩再標記我一次確認權限。</li>
       </ul>
     </article>
 

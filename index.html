@@ -11,7 +11,7 @@
     }
     body { margin: 0; padding: 20px; background: linear-gradient(135deg, #fff5f2 0%, #fefefe 50%, #ffe8e0 100%); position: relative; overflow-x: hidden; z-index: 0; }
     body::after {
-      content: "🦞";
+      content: "🦞🦑🦀🦐";
       position: fixed;
       bottom: 24px;
       right: 32px;
@@ -41,10 +41,14 @@
       opacity: 0.08;
       transform: rotate(-12deg);
     }
+    article:nth-of-type(2n)::before { content: "🦑"; }
+    article:nth-of-type(3n)::before { content: "🦀"; }
+    article:nth-of-type(4n)::before { content: "🐟"; }
     article h2 { margin-top: 0; font-size: 18px; }
     article h2::before { content: "🦞"; margin-right: 6px; }
-    ul { margin: 0; padding-left: 20px; }
-    li { margin-bottom: 6px; line-height: 1.4; }
+    ul { margin: 0; padding-left: 0; list-style: none; }
+    li { margin-bottom: 6px; line-height: 1.4; position: relative; padding-left: 26px; }
+    li::before { content: "🦐"; position: absolute; left: 0; top: 0; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
     th, td { padding: 6px 4px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
     th { color: #475569; font-weight: 600; }
@@ -97,6 +101,18 @@
       animation: float 6s ease-in-out infinite;
     }
     .lobster-confetti span:nth-child(even) { animation-delay: 1.5s; }
+
+    .seafood-banner {
+      background: linear-gradient(120deg, rgba(255, 99, 71, 0.15), rgba(255, 230, 180, 0.25));
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(244, 114, 182, 0.15);
+    }
+    .seafood-banner h2 { margin: 0 0 6px; font-size: 20px; }
+    .seafood-banner p { margin: 0 0 10px; color: #9f1239; font-size: 14px; }
+    .seafood-icons { display: flex; flex-wrap: wrap; gap: 8px; font-size: 28px; }
     .lobster-parade {
       overflow: hidden;
       border-radius: 999px;
@@ -111,6 +127,22 @@
       animation: parade 14s linear infinite;
       white-space: nowrap;
     }
+    .seafood-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+      padding: 8px 12px;
+      font-size: 20px;
+      background: rgba(14, 165, 233, 0.12);
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+    .seafood-grid span {
+      display: flex;
+      justify-content: center;
+      animation: bob 5s ease-in-out infinite;
+    }
+    .seafood-grid span:nth-child(odd) { animation-delay: 1.2s; }
     @keyframes float {
       0%, 100% { transform: translateY(0) rotate(0deg); }
       50% { transform: translateY(-4px) rotate(-2deg); }
@@ -119,8 +151,12 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
     body::before {
-      content: "🦞 🦞 🦞 🦞 🦞";
+      content: "🦞 🦐 🦀 🐟 🐙";
       position: fixed;
       inset: 0;
       pointer-events: none;
@@ -176,25 +212,47 @@
     </div>
     <div class="lobster-confetti" aria-hidden="true">
       <span>🦞</span>
+      <span>🦐</span>
       <span>🦞</span>
+      <span>🦀</span>
       <span>🦞</span>
+      <span>🦑</span>
       <span>🦞</span>
+      <span>🐟</span>
       <span>🦞</span>
-      <span>🦞</span>
-      <span>🦞</span>
-      <span>🦞</span>
-      <span>🦞</span>
-      <span>🦞</span>
+      <span>🐠</span>
     </div>
     <div class="lobster-parade" aria-hidden="true">
       <div class="track">
-        <span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span>
+        <span>🦞</span><span>🦐</span><span>🦑</span><span>🦀</span><span>🐟</span><span>🐠</span><span>🦞</span><span>🦐</span>
       </div>
       <div class="track">
-        <span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span>
+        <span>🦞</span><span>🦐</span><span>🦑</span><span>🦀</span><span>🐟</span><span>🐠</span><span>🦞</span><span>🦐</span>
       </div>
     </div>
+    <div class="seafood-grid" aria-hidden="true">
+      <span>🦞</span>
+      <span>🦐</span>
+      <span>🦑</span>
+      <span>🦀</span>
+      <span>🐙</span>
+      <span>🐟</span>
+      <span>🐠</span>
+      <span>🐡</span>
+      <span>🦪</span>
+      <span>🦈</span>
+    </div>
   </header>
+
+  <div class="seafood-banner">
+    <h2>🦞🐟🦐 海鮮攤 BGM</h2>
+    <p>全場蝦味拉滿，隨時待命端上海鮮情報。</p>
+    <div class="seafood-icons">🦞 🦐 🦑 🦀 🐟 🐠 🐡 🐙</div>
+    <div class="seafood-grid" aria-hidden="true">
+      <span>🦞</span><span>🦐</span><span>🦑</span><span>🦀</span><span>🐟</span>
+      <span>🐠</span><span>🐡</span><span>🐙</span><span>🦞</span><span>🦐</span>
+    </div>
+  </div>
 
   <section class="stack">
     <article>
@@ -305,7 +363,7 @@
     </article>
   </section>
   <footer class="lobster-parade" aria-hidden="true">
-    <div class="lobster-parade-track">🦞🦞🦞🦞🦞🦞🦞 🦞🦞🦞🦞🦞🦞🦞 </div>
+    <div class="lobster-parade-track">🦞🦐🦑🦀🐟🐠🐡 🐙🦐🦀🦞🐟🦑🦞 🦞🦀🐠🦐🐡🦑🐙 </div>
   </footer>
 </body>
 </html>

@@ -97,9 +97,27 @@
       animation: float 6s ease-in-out infinite;
     }
     .lobster-confetti span:nth-child(even) { animation-delay: 1.5s; }
+    .lobster-parade {
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(248, 113, 113, 0.12);
+      margin-bottom: 16px;
+    }
+    .lobster-parade .track {
+      display: inline-flex;
+      gap: 12px;
+      padding: 8px 18px;
+      font-size: 20px;
+      animation: parade 14s linear infinite;
+      white-space: nowrap;
+    }
     @keyframes float {
       0%, 100% { transform: translateY(0) rotate(0deg); }
       50% { transform: translateY(-4px) rotate(-2deg); }
+    }
+    @keyframes parade {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     body::before {
       content: "🦞 🦞 🦞 🦞 🦞";
@@ -163,6 +181,18 @@
       <span>🦞</span>
       <span>🦞</span>
       <span>🦞</span>
+      <span>🦞</span>
+      <span>🦞</span>
+      <span>🦞</span>
+      <span>🦞</span>
+    </div>
+    <div class="lobster-parade" aria-hidden="true">
+      <div class="track">
+        <span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span>
+      </div>
+      <div class="track">
+        <span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span><span>🦞</span>
+      </div>
     </div>
   </header>
 

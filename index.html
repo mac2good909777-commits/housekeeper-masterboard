@@ -44,27 +44,6 @@
     .ocean-bubbles span:nth-child(5) { left: 68%; animation-delay: 3s; animation-duration: 14s; }
     .ocean-bubbles span:nth-child(6) { left: 82%; animation-delay: 5s; animation-duration: 11s; }
     .ocean-bubbles span:nth-child(7) { left: 94%; animation-delay: 2s; animation-duration: 13s; }
-    .seaweed-bed {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 120px;
-      display: flex;
-      justify-content: space-around;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .seaweed-bed span {
-      width: 12px;
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(34, 197, 94, 0.45), rgba(16, 185, 129, 0.85));
-      animation: sway 6s ease-in-out infinite;
-      transform-origin: bottom center;
-    }
-    .seaweed-bed span:nth-child(even) { animation-duration: 7s; }
-
     .bubble-layer {
       position: fixed;
       inset: 0;
@@ -306,13 +285,13 @@
     <span></span>
   </div>
   <div class="seaweed-bed" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="seaweed"></span>
+    <span class="seaweed"></span>
+    <span class="seaweed"></span>
+    <span class="seaweed"></span>
+    <span class="seaweed"></span>
+    <span class="seaweed"></span>
+    <span class="seaweed"></span>
   </div>
   <div class="bubble-layer" aria-hidden="true">
     <span class="bubble"></span>

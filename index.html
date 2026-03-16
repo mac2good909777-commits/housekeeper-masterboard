@@ -272,6 +272,92 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    .party-stack {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .party-addon {
+      position: absolute;
+      opacity: 0;
+      transform: translateY(10px) scale(0.96);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      font-size: 18px;
+    }
+    .party-addon.is-active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .neon-banner {
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle at top, rgba(139, 92, 246, 0.9), rgba(59, 130, 246, 0.3));
+      color: #fff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
+    }
+    .jelly-row {
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 32px;
+      display: flex;
+      gap: 12px;
+    }
+    .coral-border {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: linear-gradient(90deg, rgba(244, 114, 182, 0.7), rgba(251, 191, 36, 0.6), rgba(14, 165, 233, 0.6));
+      opacity: 0.8;
+    }
+    .laser-grid {
+      inset: 20% 10% 30% 10%;
+      border: 2px solid rgba(14, 165, 233, 0.4);
+      border-radius: 24px;
+      background: repeating-linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0px, rgba(56, 189, 248, 0.12) 6px, transparent 6px, transparent 12px);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    .bubbles-boost {
+      right: 5%;
+      bottom: 20%;
+      font-size: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .fish-school {
+      left: 5%;
+      bottom: 25%;
+      font-size: 24px;
+      animation: swim 12s linear infinite;
+    }
+    .sparkles {
+      inset: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+      font-size: 20px;
+      color: #fef9c3;
+      text-shadow: 0 0 10px rgba(250, 204, 21, 0.9);
+    }
+    body.party-mode h1 {
+      color: #f472b6;
+      text-shadow: 0 0 10px rgba(244, 114, 182, 0.6);
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+    @keyframes swim {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120%); }
+    }
   </style>
 </head>
 <body>
@@ -468,8 +554,50 @@
       </table>
     </article>
   </section>
+  <div class="party-stack" aria-hidden="true">
+    <div class="party-addon neon-banner" data-stage="1">🌊 OCEAN PARTY MODE</div>
+    <div class="party-addon jelly-row" data-stage="2">🪼 🪼 🪼 🪼 🪼</div>
+    <div class="party-addon coral-border" data-stage="3"></div>
+    <div class="party-addon laser-grid" data-stage="4"></div>
+    <div class="party-addon bubbles-boost" data-stage="5">🫧🫧🫧<br/>🫧🫧</div>
+    <div class="party-addon fish-school" data-stage="6">🐟🐟🐟🐟🐟🐟</div>
+    <div class="party-addon sparkles" data-stage="7">✨✨✨</div>
+  </div>
   <footer class="lobster-parade" aria-hidden="true">
     <div class="lobster-parade-track">🦞🦐🦑🦀🐟🐠🐡 🐙🦐🦀🦞🐟🦑🦞 🦞🦀🐠🦐🐡🦑🐙 </div>
   </footer>
+  <script>
+    (function() {
+      const body = document.body;
+      const addons = Array.from(document.querySelectorAll('.party-addon'));
+      function computeStage(now) {
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        if (hours < 20) return 0;
+        const total = (hours - 20) * 60 + minutes;
+        if (total < 0) return 0;
+        return Math.min(7, Math.floor(total / 30) + 1);
+      }
+      function applyStage() {
+        const stage = computeStage(new Date());
+        body.dataset.partyStage = stage;
+        if (stage > 0) {
+          body.classList.add('party-mode');
+        } else {
+          body.classList.remove('party-mode');
+        }
+        addons.forEach((el) => {
+          const need = Number(el.dataset.stage) || 0;
+          if (stage >= need && stage > 0) {
+            el.classList.add('is-active');
+          } else {
+            el.classList.remove('is-active');
+          }
+        });
+      }
+      applyStage();
+      setInterval(applyStage, 60000);
+    })();
+  </script>
 </body>
 </html>

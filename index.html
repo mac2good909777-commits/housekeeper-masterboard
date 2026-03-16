@@ -68,6 +68,41 @@
     .bubble:nth-child(5) { left: 70%; width: 30px; height: 30px; animation-duration: 19s; animation-delay: 3s; }
     .bubble:nth-child(6) { left: 85%; width: 24px; height: 24px; animation-duration: 17s; animation-delay: 5s; }
 
+    .urchin-row {
+      position: fixed;
+      bottom: 8px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      font-size: 22px;
+      opacity: 0.75;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .turtle-lane {
+      position: fixed;
+      bottom: 28%;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .turtle {
+      position: absolute;
+      font-size: 34px;
+      animation: turtle-east 20s linear infinite;
+      left: -10%;
+    }
+    .turtle.reverse {
+      right: -10%;
+      left: auto;
+      animation: turtle-west 24s linear infinite;
+      top: 60px;
+      opacity: 0.8;
+    }
+
     .seaweed-bed {
       position: fixed;
       bottom: 0;
@@ -94,7 +129,7 @@
     header { margin-bottom: 20px; }
     h1 { margin: 0 0 6px; font-size: 26px; }
     .subtext { color: #475569; font-size: 14px; margin: 0; }
-    .stack { display: flex; flex-direction: column; gap: 16px; }
+    .stack { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
     article {
       background: #fff;
       border-radius: 16px;
@@ -358,6 +393,14 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(120%); }
     }
+    @keyframes turtle-east {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(120vw); }
+    }
+    @keyframes turtle-west {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-120vw); }
+    }
   </style>
 </head>
 <body>
@@ -378,6 +421,11 @@
     <span class="seaweed"></span>
     <span class="seaweed"></span>
     <span class="seaweed"></span>
+  </div>
+  <div class="urchin-row" aria-hidden="true">海膽 海膽 海膽 海膽 海膽</div>
+  <div class="turtle-lane" aria-hidden="true">
+    <span class="turtle">🐢</span>
+    <span class="turtle reverse">🐢</span>
   </div>
   <div class="bubble-layer" aria-hidden="true">
     <span class="bubble"></span>

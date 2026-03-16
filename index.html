@@ -119,6 +119,25 @@
       50% { transform: translateY(-20px); }
       100% { transform: translateY(0); }
     }
+    .lobster-parade {
+      margin-top: 24px;
+      border-radius: 999px;
+      border: 1px dashed rgba(244, 63, 94, 0.4);
+      background: rgba(255, 99, 71, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    .lobster-parade-track {
+      display: inline-block;
+      white-space: nowrap;
+      padding: 6px 0;
+      font-size: 24px;
+      animation: parade 12s linear infinite;
+    }
+    @keyframes parade {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body>
@@ -255,5 +274,8 @@
       </table>
     </article>
   </section>
+  <footer class="lobster-parade" aria-hidden="true">
+    <div class="lobster-parade-track">🦞🦞🦞🦞🦞🦞🦞 🦞🦞🦞🦞🦞🦞🦞 </div>
+  </footer>
 </body>
 </html>

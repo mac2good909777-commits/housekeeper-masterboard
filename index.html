@@ -208,11 +208,6 @@
       50% { opacity: 0.4; }
       100% { transform: translateY(-120vh) scale(1.4); opacity: 0; }
     }
-    @keyframes bubble {
-      0% { transform: translateY(0) scale(0.8); opacity: 0; }
-      10% { opacity: 0.4; }
-      100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
-    }
     body::before {
       content: "🦞 🦐 🦀 🐟 🐙";
       position: fixed;
@@ -253,6 +248,15 @@
   </style>
 </head>
 <body>
+  <div class="ocean-bubbles" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <div class="bubble-layer" aria-hidden="true">
     <span class="bubble"></span>
     <span class="bubble"></span>

@@ -126,6 +126,79 @@
     }
     .seaweed:nth-child(2n) { animation-duration: 6s; animation-delay: 1s; }
     .seaweed:nth-child(3n) { animation-duration: 8s; animation-delay: 2s; height: 160px; }
+    .party-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .party-item {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    .party-item.glow {
+      top: 12%;
+      left: 50%;
+      width: 260px;
+      height: 260px;
+      margin-left: -130px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(30, 64, 175, 0) 75%);
+      filter: blur(8px);
+    }
+    .party-item.star {
+      font-size: 36px;
+      top: 20%;
+      left: 14%;
+      animation: star-spin 14s linear infinite;
+    }
+    .party-item.jelly {
+      font-size: 48px;
+      top: 28%;
+      right: 16%;
+      animation: jelly-drift 10s ease-in-out infinite;
+    }
+    .party-item.fish {
+      font-size: 40px;
+      bottom: 30%;
+      left: 8%;
+      animation: fish-swim 12s linear infinite;
+    }
+    .party-item.lights {
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border-radius: 32px;
+      border: 2px dashed rgba(250, 204, 21, 0.4);
+      box-shadow: 0 0 20px rgba(248, 113, 113, 0.45);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .party-item.sparkle {
+      font-size: 28px;
+      bottom: 42%;
+      right: 20%;
+      animation: sparkle 5s ease-in-out infinite;
+    }
+    .party-item.fireworks {
+      font-size: 44px;
+      top: 8%;
+      right: 10%;
+      animation: firework 6s ease-in-out infinite;
+    }
+    html.party-active-1 .party-item.level-1 { opacity: 0.45; }
+    html.party-active-2 .party-item.level-2 { opacity: 0.85; }
+    html.party-active-3 .party-item.level-3 { opacity: 0.9; }
+    html.party-active-4 .party-item.level-4 { opacity: 0.9; }
+    html.party-active-5 .party-item.level-5 { opacity: 0.8; }
+    html.party-active-6 .party-item.level-6 { opacity: 0.9; }
+    html.party-active-7 .party-item.level-7 { opacity: 1; }
+    html.party-active-5 header,
+    html.party-active-6 header,
+    html.party-active-7 header {
+      box-shadow: 0 0 30px rgba(248, 113, 113, 0.45);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
     header { margin-bottom: 20px; }
     h1 { margin: 0 0 6px; font-size: 26px; }
     .subtext { color: #475569; font-size: 14px; margin: 0; }
@@ -443,7 +516,7 @@
       <span class="lobster">🦞</span>
     </div>
     <h1>大管家儀表板 <span class="lobster">🦞</span></h1>
-    <p class="subtext">最後更新：2026-03-16 22:46— 行程已同步行程表</p>
+    <p class="subtext">最後更新：2026-03-16 22:48— 行程已同步行程表</p>
     <div class="lobster-row" aria-hidden="true">
       <span>🦞</span>
       <span>🦞</span>

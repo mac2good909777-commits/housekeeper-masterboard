@@ -9,225 +9,20 @@
       color: #0f172a;
       background: #f8fafc;
     }
-    body { margin: 0; padding: 20px; background: linear-gradient(135deg, #fff5f2 0%, #fefefe 50%, #ffe8e0 100%); position: relative; overflow-x: hidden; z-index: 0; }
-    body::after {
-      content: "🦞🦑🦀🦐";
-      position: fixed;
-      bottom: 24px;
-      right: 32px;
-      font-size: 96px;
-      opacity: 0.08;
-      pointer-events: none;
-      transform: rotate(-12deg);
-    }
-    .ocean-bubbles {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .ocean-bubbles span {
-      position: absolute;
-      bottom: -40px;
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      background: rgba(59, 130, 246, 0.18);
-      animation: bubble 12s ease-in infinite;
-    }
-    .ocean-bubbles span:nth-child(odd) { background: rgba(14, 165, 233, 0.2); }
-    .ocean-bubbles span:nth-child(1) { left: 6%; animation-delay: 0s; animation-duration: 11s; }
-    .ocean-bubbles span:nth-child(2) { left: 18%; animation-delay: 2s; animation-duration: 13s; }
-    .ocean-bubbles span:nth-child(3) { left: 34%; animation-delay: 4s; animation-duration: 10s; }
-    .ocean-bubbles span:nth-child(4) { left: 52%; animation-delay: 1s; animation-duration: 12s; }
-    .ocean-bubbles span:nth-child(5) { left: 68%; animation-delay: 3s; animation-duration: 14s; }
-    .ocean-bubbles span:nth-child(6) { left: 82%; animation-delay: 5s; animation-duration: 11s; }
-    .ocean-bubbles span:nth-child(7) { left: 94%; animation-delay: 2s; animation-duration: 13s; }
-    .bubble-layer {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
-    }
-    .bubble {
-      position: absolute;
-      bottom: -120px;
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: rgba(59, 130, 246, 0.18);
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-      animation: bubble 18s linear infinite;
-    }
-    .bubble:nth-child(1) { left: 10%; animation-duration: 16s; }
-    .bubble:nth-child(2) { left: 25%; width: 26px; height: 26px; animation-duration: 14s; animation-delay: 2s; }
-    .bubble:nth-child(3) { left: 40%; width: 35px; height: 35px; animation-duration: 20s; animation-delay: 4s; }
-    .bubble:nth-child(4) { left: 55%; width: 22px; height: 22px; animation-duration: 13s; animation-delay: 1s; }
-    .bubble:nth-child(5) { left: 70%; width: 30px; height: 30px; animation-duration: 19s; animation-delay: 3s; }
-    .bubble:nth-child(6) { left: 85%; width: 24px; height: 24px; animation-duration: 17s; animation-delay: 5s; }
-
-    .urchin-row {
-      position: fixed;
-      bottom: 8px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      font-size: 22px;
-      opacity: 0.75;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .turtle-lane {
-      position: fixed;
-      bottom: 28%;
-      left: 0;
-      width: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .turtle {
-      position: absolute;
-      font-size: 34px;
-      animation: turtle-east 20s linear infinite;
-      left: -10%;
-    }
-    .turtle.reverse {
-      right: -10%;
-      left: auto;
-      animation: turtle-west 24s linear infinite;
-      top: 60px;
-      opacity: 0.8;
-    }
-
-    .seaweed-bed {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 140px;
-      pointer-events: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      z-index: -1;
-    }
-    .seaweed {
-      width: 14px;
-      height: 140px;
-      border-radius: 999px 999px 0 0;
-      background: linear-gradient(180deg, rgba(16, 185, 129, 0.5), rgba(5, 150, 105, 0.9));
-      animation: sway 7s ease-in-out infinite;
-      transform-origin: bottom center;
-      filter: drop-shadow(0 4px 8px rgba(6, 95, 70, 0.2));
-    }
-    .seaweed:nth-child(2n) { animation-duration: 6s; animation-delay: 1s; }
-    .seaweed:nth-child(3n) { animation-duration: 8s; animation-delay: 2s; height: 160px; }
-    .party-layer {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .party-item {
-      position: absolute;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-    }
-    .party-item.glow {
-      top: 12%;
-      left: 50%;
-      width: 260px;
-      height: 260px;
-      margin-left: -130px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(30, 64, 175, 0) 75%);
-      filter: blur(8px);
-    }
-    .party-item.star {
-      font-size: 36px;
-      top: 20%;
-      left: 14%;
-      animation: star-spin 14s linear infinite;
-    }
-    .party-item.jelly {
-      font-size: 48px;
-      top: 28%;
-      right: 16%;
-      animation: jelly-drift 10s ease-in-out infinite;
-    }
-    .party-item.fish {
-      font-size: 40px;
-      bottom: 30%;
-      left: 8%;
-      animation: fish-swim 12s linear infinite;
-    }
-    .party-item.lights {
-      top: 12px;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      border-radius: 32px;
-      border: 2px dashed rgba(250, 204, 21, 0.4);
-      box-shadow: 0 0 20px rgba(248, 113, 113, 0.45);
-      animation: pulse 3s ease-in-out infinite;
-    }
-    .party-item.sparkle {
-      font-size: 28px;
-      bottom: 42%;
-      right: 20%;
-      animation: sparkle 5s ease-in-out infinite;
-    }
-    .party-item.fireworks {
-      font-size: 44px;
-      top: 8%;
-      right: 10%;
-      animation: firework 6s ease-in-out infinite;
-    }
-    html.party-active-1 .party-item.level-1 { opacity: 0.45; }
-    html.party-active-2 .party-item.level-2 { opacity: 0.85; }
-    html.party-active-3 .party-item.level-3 { opacity: 0.9; }
-    html.party-active-4 .party-item.level-4 { opacity: 0.9; }
-    html.party-active-5 .party-item.level-5 { opacity: 0.8; }
-    html.party-active-6 .party-item.level-6 { opacity: 0.9; }
-    html.party-active-7 .party-item.level-7 { opacity: 1; }
-    html.party-active-5 header,
-    html.party-active-6 header,
-    html.party-active-7 header {
-      box-shadow: 0 0 30px rgba(248, 113, 113, 0.45);
-      border: 1px solid rgba(251, 191, 36, 0.35);
-    }
+    body { margin: 0; padding: 20px; background: #f1f5f9; }
     header { margin-bottom: 20px; }
     h1 { margin: 0 0 6px; font-size: 26px; }
     .subtext { color: #475569; font-size: 14px; margin: 0; }
-    .stack { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
+    .stack { display: flex; flex-direction: column; gap: 16px; }
     article {
       background: #fff;
       border-radius: 16px;
       padding: 16px;
       box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
-      position: relative;
-      overflow: hidden;
     }
-    article::before {
-      content: "🦞";
-      position: absolute;
-      top: 8px;
-      right: 12px;
-      font-size: 28px;
-      opacity: 0.08;
-      transform: rotate(-12deg);
-    }
-    article:nth-of-type(2n)::before { content: "🦑"; }
-    article:nth-of-type(3n)::before { content: "🦀"; }
-    article:nth-of-type(4n)::before { content: "🐟"; }
     article h2 { margin-top: 0; font-size: 18px; }
-    article h2::before { content: "🦞"; margin-right: 6px; }
-    ul { margin: 0; padding-left: 0; list-style: none; }
-    li { margin-bottom: 6px; line-height: 1.4; position: relative; padding-left: 26px; }
-    li::before { content: "🦐"; position: absolute; left: 0; top: 0; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 6px; line-height: 1.4; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
     th, td { padding: 6px 4px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
     th { color: #475569; font-weight: 600; }
@@ -240,359 +35,48 @@
       font-size: 12px;
       font-weight: 600;
     }
-    .lobster-line {
-      display: flex;
-      gap: 8px;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-    .lobster-line .lobster {
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-    }
     .ontrack { background: #dcfce7; color: #166534; }
     .need-action { background: #fef3c7; color: #b45309; }
     .neutral { background: #e2e8f0; color: #475569; }
     .note { margin-top: 10px; font-size: 13px; color: #475569; }
     .doc-id { font-size: 12px; color: #64748b; word-break: break-all; }
-    article h2::after { content: "🦞"; margin-left: 6px; font-size: 14px; opacity: 0.45; }
-    .lobster-row {
-      display: flex;
-      gap: 8px;
-      font-size: 30px;
-      margin-top: 8px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-    }
-    .lobster-row span {
-      animation: float 4s ease-in-out infinite;
-    }
-    .lobster-row span:nth-child(2) { animation-delay: 0.8s; }
-    .lobster-row span:nth-child(3) { animation-delay: 1.6s; }
-    .lobster-row span:nth-child(4) { animation-delay: 2.4s; }
-    .lobster-confetti {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 18px;
-      margin: 4px 0 12px;
-      opacity: 0.9;
-    }
-    .lobster-confetti span {
-      animation: float 6s ease-in-out infinite;
-    }
-    .lobster-confetti span:nth-child(even) { animation-delay: 1.5s; }
-
-    .seafood-banner {
-      background: linear-gradient(120deg, rgba(255, 99, 71, 0.15), rgba(255, 230, 180, 0.25));
-      border: 1px solid rgba(244, 63, 94, 0.25);
-      border-radius: 20px;
-      padding: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 20px rgba(244, 114, 182, 0.15);
-    }
-    .seafood-banner h2 { margin: 0 0 6px; font-size: 20px; }
-    .seafood-banner p { margin: 0 0 10px; color: #9f1239; font-size: 14px; }
-    .seafood-icons { display: flex; flex-wrap: wrap; gap: 8px; font-size: 28px; }
-    .lobster-parade {
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(248, 113, 113, 0.12);
-      margin-bottom: 16px;
-    }
-    .lobster-parade .track {
-      display: inline-flex;
-      gap: 12px;
-      padding: 8px 18px;
-      font-size: 20px;
-      animation: parade 14s linear infinite;
-      white-space: nowrap;
-    }
-    .seafood-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 6px;
-      padding: 8px 12px;
-      font-size: 20px;
-      background: rgba(14, 165, 233, 0.12);
-      border-radius: 16px;
-      margin-bottom: 16px;
-    }
-    .seafood-grid span {
-      display: flex;
-      justify-content: center;
-      animation: bob 5s ease-in-out infinite;
-    }
-    .seafood-grid span:nth-child(odd) { animation-delay: 1.2s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-4px) rotate(-2deg); }
-    }
-    @keyframes parade {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-    @keyframes bubble {
-      0% { transform: translateY(0) scale(0.8); opacity: 0; }
-      15% { opacity: 0.45; }
-      100% { transform: translateY(-120vh) scale(1.3); opacity: 0; }
-    }
-    @keyframes sway {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(5deg); }
-    }
-    body::before {
-      content: "🦞 🦐 🦀 🐟 🐙";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      font-size: 80px;
-      opacity: 0.05;
-      z-index: -2;
-      animation: drift 18s linear infinite;
-    }
-    @keyframes drift {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
-    }
-    .lobster-parade {
-      margin-top: 24px;
-      border-radius: 999px;
-      border: 1px dashed rgba(244, 63, 94, 0.4);
-      background: rgba(255, 99, 71, 0.08);
-      overflow: hidden;
-      position: relative;
-    }
-    .lobster-parade-track {
-      display: inline-block;
-      white-space: nowrap;
-      padding: 6px 0;
-      font-size: 24px;
-      animation: parade 12s linear infinite;
-    }
-    @keyframes parade {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .party-stack {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .party-addon {
-      position: absolute;
-      opacity: 0;
-      transform: translateY(10px) scale(0.96);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      font-size: 18px;
-    }
-    .party-addon.is-active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    .neon-banner {
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 8px 18px;
-      border-radius: 999px;
-      background: radial-gradient(circle at top, rgba(139, 92, 246, 0.9), rgba(59, 130, 246, 0.3));
-      color: #fff;
-      letter-spacing: 2px;
-      text-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
-    }
-    .jelly-row {
-      top: 70px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 32px;
-      display: flex;
-      gap: 12px;
-    }
-    .coral-border {
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      background: linear-gradient(90deg, rgba(244, 114, 182, 0.7), rgba(251, 191, 36, 0.6), rgba(14, 165, 233, 0.6));
-      opacity: 0.8;
-    }
-    .laser-grid {
-      inset: 20% 10% 30% 10%;
-      border: 2px solid rgba(14, 165, 233, 0.4);
-      border-radius: 24px;
-      background: repeating-linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0px, rgba(56, 189, 248, 0.12) 6px, transparent 6px, transparent 12px);
-      animation: pulse 4s ease-in-out infinite;
-    }
-    .bubbles-boost {
-      right: 5%;
-      bottom: 20%;
-      font-size: 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .fish-school {
-      left: 5%;
-      bottom: 25%;
-      font-size: 24px;
-      animation: swim 12s linear infinite;
-    }
-    .sparkles {
-      inset: 0;
-      display: flex;
-      justify-content: space-between;
-      padding: 40px;
-      font-size: 20px;
-      color: #fef9c3;
-      text-shadow: 0 0 10px rgba(250, 204, 21, 0.9);
-    }
-    body.party-mode h1 {
-      color: #f472b6;
-      text-shadow: 0 0 10px rgba(244, 114, 182, 0.6);
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.7; }
-    }
-    @keyframes swim {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(120%); }
-    }
-    @keyframes turtle-east {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(120vw); }
-    }
-    @keyframes turtle-west {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-120vw); }
-    }
   </style>
 </head>
 <body>
-  <div class="ocean-bubbles" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <div class="seaweed-bed" aria-hidden="true">
-    <span class="seaweed"></span>
-    <span class="seaweed"></span>
-    <span class="seaweed"></span>
-    <span class="seaweed"></span>
-    <span class="seaweed"></span>
-    <span class="seaweed"></span>
-    <span class="seaweed"></span>
-  </div>
-  <div class="urchin-row" aria-hidden="true">海膽 海膽 海膽 海膽 海膽</div>
-  <div class="turtle-lane" aria-hidden="true">
-    <span class="turtle">🐢</span>
-    <span class="turtle reverse">🐢</span>
-  </div>
-  <div class="bubble-layer" aria-hidden="true">
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-    <span class="bubble"></span>
-  </div>
   <header>
-    <div class="lobster-line" aria-hidden="true">
-      <span class="lobster">🦞</span>
-      <span class="lobster">🦞</span>
-      <span class="lobster">🦞</span>
-      <span class="lobster">🦞</span>
-    </div>
-    <h1>大管家儀表板 <span class="lobster">🦞</span></h1>
-    <p class="subtext">最後更新：2026-03-16 22:48— 行程已同步行程表</p>
-    <div class="lobster-row" aria-hidden="true">
-      <span>🦞</span>
-      <span>🦞</span>
-      <span>🦞</span>
-      <span>🦞</span>
-    </div>
-    <div class="lobster-confetti" aria-hidden="true">
-      <span>🦞</span>
-      <span>🦐</span>
-      <span>🦞</span>
-      <span>🦀</span>
-      <span>🦞</span>
-      <span>🦑</span>
-      <span>🦞</span>
-      <span>🐟</span>
-      <span>🦞</span>
-      <span>🐠</span>
-    </div>
-    <div class="lobster-parade" aria-hidden="true">
-      <div class="track">
-        <span>🦞</span><span>🦐</span><span>🦑</span><span>🦀</span><span>🐟</span><span>🐠</span><span>🦞</span><span>🦐</span>
-      </div>
-      <div class="track">
-        <span>🦞</span><span>🦐</span><span>🦑</span><span>🦀</span><span>🐟</span><span>🐠</span><span>🦞</span><span>🦐</span>
-      </div>
-    </div>
-    <div class="seafood-grid" aria-hidden="true">
-      <span>🦞</span>
-      <span>🦐</span>
-      <span>🦑</span>
-      <span>🦀</span>
-      <span>🐙</span>
-      <span>🐟</span>
-      <span>🐠</span>
-      <span>🐡</span>
-      <span>🦪</span>
-      <span>🦈</span>
-    </div>
+    <h1>大管家儀表板</h1>
+    <p class="subtext">最後更新：2026-03-17 09:09 — 今日行程與任務集中檢視</p>
   </header>
-
-  <div class="seafood-banner">
-    <h2>🦞🐟🦐 海鮮攤 BGM</h2>
-    <p>全場蝦味拉滿，隨時待命端上海鮮情報。</p>
-    <div class="seafood-icons">🦞 🦐 🦑 🦀 🐟 🐠 🐡 🐙</div>
-    <div class="seafood-grid" aria-hidden="true">
-      <span>🦞</span><span>🦐</span><span>🦑</span><span>🦀</span><span>🐟</span>
-      <span>🐠</span><span>🐡</span><span>🐙</span><span>🦞</span><span>🦐</span>
-    </div>
-  </div>
 
   <section class="stack">
     <article>
       <h2>今日提醒（最優先）</h2>
       <ul>
-        <li>大雅委託：已約 3/17(二) 14:30 屋主面談，今天暫停追催，改為會前準備。</li>
-        <li>逢甲在職專班：改為等待 3/17 下午的面試順序通知，今日無需再跟進。</li>
-        <li>記帳本：尚未收到今日費用資料，若有支出請直接告訴我。</li>
-        <li>19:00 晚間收斂：有新增任務/阻塞請 18:30 前交辦，晚報一併整理。</li>
+        <li>10:00｜LB 財務 — 與曾國榮確認買方需求。</li>
+        <li>14:30｜臺膠李小姐＆大雅委託 — 雙場面談，攜帶委託書資料，結果需記錄進行程表。</li>
+        <li>18:00｜逢甲在職專班/家人 — 等待面試時段通知＋回報掃墓日期。</li>
+        <li>Masterboard PAT：沿用既有 token，如需 rotate 請提供新值。</li>
       </ul>
+      <p class="note">Google Calendar 尚未重新授權，目前行程依試算表記錄。</p>
     </article>
 
     <article>
       <h2>行程 — 今天</h2>
       <ul>
-        <li>（剩餘時段無待辦；若有臨時行程，請更新行程表或直接告訴我。）</li>
+        <li>10:00｜財務｜LB：確認條件。</li>
+        <li>14:30｜重要人｜臺膠李小姐：拜訪並確認委託書內容。</li>
+        <li>14:30｜行程｜大雅委託：屋主面談，紀錄授權結果。</li>
+        <li>18:00｜工作事務｜逢甲在職專班/家人：面試時段＆掃墓日期回報。</li>
       </ul>
-      <p class="note">行程資料來源：Google 試算表「行程表」。Google Calendar 仍待腳本接通。</p>
     </article>
 
     <article>
       <h2>行程 — 明日 + 未來 10 天</h2>
       <ul>
-        <li>03/17(二) 14:30｜大雅委託 — 屋主面談確認授權（行程表）。</li>
-        <li>03/17(二) 下午｜逢甲建設研究所在職專班 — 面試順序通知（行程表）。</li>
+        <li>03/18(三) 10:30–11:30｜市政南二路：開門看屋。</li>
+        <li>03/18(三) 17:00｜大里仁化路委託：會前資料檢查。</li>
+        <li>03/19(四) 10:30｜大里仁化路廠房：現場拜訪。</li>
       </ul>
-      <p class="note">行程表目前僅列上述兩項；若需要加入其他事件請更新試算表或提供日曆腳本。</p>
     </article>
 
     <article>
@@ -602,18 +86,18 @@
         <tbody>
           <tr>
             <td>07:00 早報 + masterboard</td>
-            <td><span class="status-chip ontrack">完成 07:05</span></td>
-            <td>明日 06:50 重新彙整 SHORT_TERM + 行程表。</td>
+            <td><span class="status-chip ontrack">完成 09:09</span></td>
+            <td>持續監控行程表更新，若 Calendar 授權恢復即加入。</td>
           </tr>
           <tr>
             <td>14:00 午間校正</td>
-            <td><span class="status-chip ontrack">完成 14:05</span></td>
-            <td>若有新阻塞即刻標記。</td>
+            <td><span class="status-chip neutral">排程</span></td>
+            <td>會後補錄 14:30 兩場面談結果。</td>
           </tr>
           <tr>
             <td>19:00 晚間收斂</td>
             <td><span class="status-chip neutral">排程</span></td>
-            <td>更新紅/黃燈、同步 masterboard 並 DM。</td>
+            <td>標記完成/延宕並準備 3/18 物件拜訪資料。</td>
           </tr>
         </tbody>
       </table>
@@ -625,29 +109,24 @@
         <thead><tr><th>任務</th><th>狀態</th><th>備註</th></tr></thead>
         <tbody>
           <tr>
-            <td>每日匯報流程建立（早報/午報/晚報）</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>06:50/14:00/19:00 三段式</td>
+            <td>每日匯報流程建立</td>
+            <td><span class="status-chip need-action">持續優化</span></td>
+            <td>三段式報告正常運作，待 Calendar 資料納入。</td>
           </tr>
           <tr>
-            <td>Masterboard GitHub 部署</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>PAT 已確認可用，維持例行 push</td>
+            <td>Masterboard 部署</td>
+            <td><span class="status-chip ontrack">PAT OK</span></td>
+            <td>例行 push 正常，保持監控。</td>
           </tr>
           <tr>
-            <td>3/12 追蹤大雅委託授權出租/出售</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>優先級2，3/14 前檢核</td>
+            <td>大雅委託追蹤</td>
+            <td><span class="status-chip ontrack">面談今日 14:30</span></td>
+            <td>面談結果需寫回行程表與 SHORT_TERM。</td>
           </tr>
           <tr>
-            <td>記帳本紀錄維護</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>等待每日費用輸入</td>
-          </tr>
-          <tr>
-            <td>系統健康異常排查（reaction/lane/memory）</td>
-            <td><span class="status-chip ontrack">已完成</span></td>
-            <td>2026-03-15 停掉群組 ack reaction、補完記憶檔、留存紀錄</td>
+            <td>記帳本維護</td>
+            <td><span class="status-chip neutral">等資料</span></td>
+            <td>待收到今日費用明細。</td>
           </tr>
         </tbody>
       </table>
@@ -656,8 +135,8 @@
     <article>
       <h2>待確認 / 指令</h2>
       <ul>
-        <li>若要整合 Google Calendar，請提供日曆腳本或授權流程。</li>
-        <li>G R 群：仍未收到訊息，麻煩再標記我一次確認權限。</li>
+        <li>Google Calendar 授權：需在 Mac 上執行 `python3 ~/.openclaw/workspace/tools/google_calendar.py auth` 才能恢復自動行程。</li>
+        <li>G R 群權限：仍未收到新增訊息，若有需要請再標記我。</li>
       </ul>
     </article>
 
@@ -675,50 +154,5 @@
       </table>
     </article>
   </section>
-  <div class="party-stack" aria-hidden="true">
-    <div class="party-addon neon-banner" data-stage="1">🌊 OCEAN PARTY MODE</div>
-    <div class="party-addon jelly-row" data-stage="2">🪼 🪼 🪼 🪼 🪼</div>
-    <div class="party-addon coral-border" data-stage="3"></div>
-    <div class="party-addon laser-grid" data-stage="4"></div>
-    <div class="party-addon bubbles-boost" data-stage="5">🫧🫧🫧<br/>🫧🫧</div>
-    <div class="party-addon fish-school" data-stage="6">🐟🐟🐟🐟🐟🐟</div>
-    <div class="party-addon sparkles" data-stage="7">✨✨✨</div>
-  </div>
-  <footer class="lobster-parade" aria-hidden="true">
-    <div class="lobster-parade-track">🦞🦐🦑🦀🐟🐠🐡 🐙🦐🦀🦞🐟🦑🦞 🦞🦀🐠🦐🐡🦑🐙 </div>
-  </footer>
-  <script>
-    (function() {
-      const body = document.body;
-      const addons = Array.from(document.querySelectorAll('.party-addon'));
-      function computeStage(now) {
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        if (hours < 20) return 0;
-        const total = (hours - 20) * 60 + minutes;
-        if (total < 0) return 0;
-        return Math.min(7, Math.floor(total / 30) + 1);
-      }
-      function applyStage() {
-        const stage = computeStage(new Date());
-        body.dataset.partyStage = stage;
-        if (stage > 0) {
-          body.classList.add('party-mode');
-        } else {
-          body.classList.remove('party-mode');
-        }
-        addons.forEach((el) => {
-          const need = Number(el.dataset.stage) || 0;
-          if (stage >= need && stage > 0) {
-            el.classList.add('is-active');
-          } else {
-            el.classList.remove('is-active');
-          }
-        });
-      }
-      applyStage();
-      setInterval(applyStage, 60000);
-    })();
-  </script>
 </body>
 </html>

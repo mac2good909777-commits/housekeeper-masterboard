@@ -2,30 +2,63 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <title>大管家儀表板</title>
+  <title>大管家儀表板 — 週四版</title>
   <style>
     :root {
       font-family: "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
-      color: #0f172a;
-      background: #f8fafc;
+      color: #111827;
     }
-    body { margin: 0; padding: 20px; background: #f1f5f9; }
-    header { margin-bottom: 20px; }
-    h1 { margin: 0 0 6px; font-size: 26px; }
-    .subtext { color: #475569; font-size: 14px; margin: 0; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: linear-gradient(135deg, #ede9fe, #cffafe);
+    }
+    header {
+      margin-bottom: 24px;
+      color: #1f2937;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fbcfe8;
+      color: #9d174d;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .subtext { color: #374151; font-size: 14px; margin: 8px 0 0; }
     .stack { display: flex; flex-direction: column; gap: 16px; }
     article {
       background: #fff;
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.12);
     }
-    article h2 { margin-top: 0; font-size: 18px; }
-    ul { margin: 0; padding-left: 20px; }
-    li { margin-bottom: 6px; line-height: 1.4; }
+    article h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #312e81;
+      letter-spacing: 1px;
+    }
+    ul { margin: 0; padding-left: 20px; color: #1f2937; }
+    li { margin-bottom: 6px; line-height: 1.5; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    th, td { padding: 6px 4px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
-    th { color: #475569; font-weight: 600; }
+    th, td {
+      padding: 6px 4px;
+      border-bottom: 1px solid #e0e7ff;
+      vertical-align: top;
+    }
+    th { color: #4338ca; font-weight: 600; }
     .status-chip {
       display: inline-flex;
       align-items: center;
@@ -35,51 +68,52 @@
       font-size: 12px;
       font-weight: 600;
     }
-    .ontrack { background: #dcfce7; color: #166534; }
-    .need-action { background: #fef3c7; color: #b45309; }
-    .neutral { background: #e2e8f0; color: #475569; }
-    .note { margin-top: 10px; font-size: 13px; color: #475569; }
-    .doc-id { font-size: 12px; color: #64748b; word-break: break-all; }
+    .ontrack { background: #d1fae5; color: #065f46; }
+    .need-action { background: #fef3c7; color: #92400e; }
+    .neutral { background: #e0e7ff; color: #3730a3; }
+    .note { margin-top: 10px; font-size: 13px; color: #4b5563; }
+    .doc-id { font-size: 12px; color: #6b7280; word-break: break-all; }
   </style>
 </head>
 <body>
   <header>
-    <h1>大管家儀表板</h1>
-    <p class="subtext">最後更新：2026-03-19 07:04 — 早報集中檢視</p>
+    <div class="label">Thursday Flow</div>
+    <h1>大管家儀表板 — 週四節奏</h1>
+    <p class="subtext">最後更新：2026-03-19 07:04 · 專注今日巡檢與未來十天節點</p>
   </header>
 
   <section class="stack">
     <article>
-      <h2>今日提醒（最優先）</h2>
+      <h2>週四焦點</h2>
       <ul>
-        <li>10:00｜行程表未命名行程 — 請補充客戶/專案資訊，避免遺漏。</li>
-        <li>15:00｜張先生 — 新增行程待確認主題與準備資料。</li>
-        <li>15:30｜優先級 1 下次檢核 — 需準備回覆。</li>
-        <li>Masterboard PAT：沿用既有 token，如需 rotate 請提供新值。</li>
+        <li>10:00 未命名行程：請補齊客戶/內容，避免行程表缺欄。</li>
+        <li>15:00 張先生：確認議程與所需文件。</li>
+        <li>15:30 優先級 1 檢核：準備回覆，於午間校正後更新結果。</li>
+        <li>Masterboard PAT：仍採舊 token，如需替換請提供新值。</li>
       </ul>
-      <p class="note">Google Calendar 尚未重新授權（需執行 `python3 ~/.openclaw/workspace/tools/google_calendar.py auth`）。目前僅依行程表資料更新。</p>
+      <p class="note">Calendar 未授權，待執行 `python3 ~/.openclaw/workspace/tools/google_calendar.py auth` 後恢復。</p>
     </article>
 
     <article>
       <h2>行程 — 今天</h2>
       <ul>
-        <li>10:00｜行程表（優先級中）— 未填客戶名稱，請確認。</li>
-        <li>15:00｜張先生 — 新增行程，確認內容後更新。</li>
-        <li>15:30｜優先級 1 — 下次檢核。</li>
+        <li>10:00｜行程表（優先級：中）— 未填專案，請補資料。</li>
+        <li>15:00｜張先生 — 新增行程，確認主題與參與者。</li>
+        <li>15:30｜優先級 1 — 下次檢核，預備更新。</li>
       </ul>
     </article>
 
     <article>
       <h2>行程 — 未來 10 天</h2>
       <ul>
-        <li>目前行程表尚無 3/20–3/28 新增項目，若有行程請補錄。</li>
+        <li>目前行程表尚未新增 3/20–3/28 事件，若有排程請補錄。</li>
       </ul>
     </article>
 
     <article>
-      <h2>逾期行程（過去 3 天未完成）</h2>
+      <h2>逾期行程（近三日）</h2>
       <ul>
-        <li>03/14｜大雅授權出租/出售 — 原定 3/14 前檢核，仍待屋主正式授權與更新結果。</li>
+        <li>03/14｜大雅授權出租/出售 — 應在 3/14 前檢核，仍待屋主正式回覆。</li>
       </ul>
     </article>
 
@@ -91,17 +125,17 @@
           <tr>
             <td>07:00 早報 + masterboard</td>
             <td><span class="status-chip ontrack">完成 07:04</span></td>
-            <td>等待 Calendar 授權後重跑行程擷取。</td>
+            <td>待 Calendar 授權後補跑行程擷取。</td>
           </tr>
           <tr>
             <td>14:00 午間校正</td>
             <td><span class="status-chip neutral">排程</span></td>
-            <td>重點在 15:00/15:30 行程結束後更新成果。</td>
+            <td>樞紐：15:00/15:30 行程回覆。</td>
           </tr>
           <tr>
             <td>19:00 晚間收斂</td>
             <td><span class="status-chip neutral">排程</span></td>
-            <td>標記今日完成/延宕，準備 3/20 行程。</td>
+            <td>整合今日結果、準備 3/20 內容。</td>
           </tr>
         </tbody>
       </table>
@@ -115,22 +149,22 @@
           <tr>
             <td>每日匯報流程建立</td>
             <td><span class="status-chip need-action">持續優化</span></td>
-            <td>等待 Calendar 資料納入。</td>
+            <td>待 Calendar 資料納入，週四檢查報告一致性。</td>
           </tr>
           <tr>
             <td>Masterboard 部署</td>
             <td><span class="status-chip ontrack">PAT OK</span></td>
-            <td>例行 push 正常，保持監控。</td>
+            <td>例行 push 正常。</td>
           </tr>
           <tr>
             <td>大雅委託追蹤</td>
-            <td><span class="status-chip need-action">逾期檢核</span></td>
-            <td>3/14 前應完成授權，仍待屋主正式回覆。</td>
+            <td><span class="status-chip need-action">逾期</span></td>
+            <td>3/14 前應結案，等待屋主授權。</td>
           </tr>
           <tr>
             <td>記帳本維護</td>
             <td><span class="status-chip neutral">等資料</span></td>
-            <td>待收到今日費用明細。</td>
+            <td>待今日費用更新。</td>
           </tr>
         </tbody>
       </table>
@@ -139,13 +173,13 @@
     <article>
       <h2>待確認 / 指令</h2>
       <ul>
-        <li>Google Calendar 授權：需在 Mac 上執行 `python3 ~/.openclaw/workspace/tools/google_calendar.py auth`。</li>
-        <li>10:00 未命名行程：請提供客戶/主題以便追蹤。</li>
+        <li>Google Calendar 授權：請在 Mac 執行 auth 指令。</li>
+        <li>10:00 行程細節：需要客戶/主題資訊。</li>
       </ul>
     </article>
 
     <article>
-      <h2>群組 & 文件對照（固定資訊）</h2>
+      <h2>群組 & 文件對照</h2>
       <table>
         <thead><tr><th>群組</th><th>chat_id</th><th>Google Doc ID</th></tr></thead>
         <tbody>

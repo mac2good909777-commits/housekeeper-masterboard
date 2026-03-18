@@ -45,44 +45,41 @@
 <body>
   <header>
     <h1>大管家儀表板</h1>
-    <p class="subtext">最後更新：2026-03-19 06:31— 今日行程與任務集中檢視</p>
+    <p class="subtext">最後更新：2026-03-19 07:04 — 早報集中檢視</p>
   </header>
 
   <section class="stack">
     <article>
       <h2>今日提醒（最優先）</h2>
       <ul>
-        <li>10:00｜LB 財務 — 與曾國榮確認買方需求。</li>
-        <li>14:30｜臺膠李小姐＆大雅委託 — 雙場面談，攜帶委託書資料，結果需記錄進行程表。</li>
-        <li>18:00｜逢甲在職專班/家人 — 等待面試時段通知＋回報掃墓日期。</li>
+        <li>10:00｜行程表未命名行程 — 請補充客戶/專案資訊，避免遺漏。</li>
+        <li>15:00｜張先生 — 新增行程待確認主題與準備資料。</li>
+        <li>15:30｜優先級 1 下次檢核 — 需準備回覆。</li>
         <li>Masterboard PAT：沿用既有 token，如需 rotate 請提供新值。</li>
       </ul>
-      <p class="note">Google Calendar 尚未重新授權，目前行程依試算表記錄。</p>
+      <p class="note">Google Calendar 尚未重新授權（需執行 `python3 ~/.openclaw/workspace/tools/google_calendar.py auth`）。目前僅依行程表資料更新。</p>
     </article>
 
     <article>
       <h2>行程 — 今天</h2>
       <ul>
-        <li>10:00｜財務｜LB：確認條件。</li>
-        <li>14:30｜重要人｜臺膠李小姐：拜訪並確認委託書內容。</li>
-        <li>14:30｜行程｜大雅委託：屋主面談，紀錄授權結果。</li>
-        <li>18:00｜工作事務｜逢甲在職專班/家人：面試時段＆掃墓日期回報。</li>
+        <li>10:00｜行程表（優先級中）— 未填客戶名稱，請確認。</li>
+        <li>15:00｜張先生 — 新增行程，確認內容後更新。</li>
+        <li>15:30｜優先級 1 — 下次檢核。</li>
       </ul>
     </article>
 
     <article>
       <h2>行程 — 未來 10 天</h2>
       <ul>
-        <li>03/18(三) 10:30–11:30｜市政南二路：開門看屋。</li>
-        <li>03/18(三) 17:00｜大里仁化路委託：會前資料檢查。</li>
-        <li>03/19(四) 10:30｜大里仁化路廠房：現場拜訪。</li>
+        <li>目前行程表尚無 3/20–3/28 新增項目，若有行程請補錄。</li>
       </ul>
     </article>
 
     <article>
       <h2>逾期行程（過去 3 天未完成）</h2>
       <ul>
-        <li>03/14｜大雅授權出租/出售 — 原定 3/14 前檢核，仍待屋主正式授權，面談結果需更新。</li>
+        <li>03/14｜大雅授權出租/出售 — 原定 3/14 前檢核，仍待屋主正式授權與更新結果。</li>
       </ul>
     </article>
 
@@ -93,18 +90,18 @@
         <tbody>
           <tr>
             <td>07:00 早報 + masterboard</td>
-            <td><span class="status-chip ontrack">完成 09:09</span></td>
-            <td>持續監控行程表更新，若 Calendar 授權恢復即加入。</td>
+            <td><span class="status-chip ontrack">完成 07:04</span></td>
+            <td>等待 Calendar 授權後重跑行程擷取。</td>
           </tr>
           <tr>
             <td>14:00 午間校正</td>
             <td><span class="status-chip neutral">排程</span></td>
-            <td>會後補錄 14:30 兩場面談結果。</td>
+            <td>重點在 15:00/15:30 行程結束後更新成果。</td>
           </tr>
           <tr>
             <td>19:00 晚間收斂</td>
             <td><span class="status-chip neutral">排程</span></td>
-            <td>標記完成/延宕並準備 3/18 物件拜訪資料。</td>
+            <td>標記今日完成/延宕，準備 3/20 行程。</td>
           </tr>
         </tbody>
       </table>
@@ -116,34 +113,24 @@
         <thead><tr><th>任務</th><th>狀態</th><th>備註</th></tr></thead>
         <tbody>
           <tr>
-            <td>每日匯報流程建立（早報/午報/晚報）</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>06:50/14:00/19:00 三段式</td>
+            <td>每日匯報流程建立</td>
+            <td><span class="status-chip need-action">持續優化</span></td>
+            <td>等待 Calendar 資料納入。</td>
           </tr>
           <tr>
-            <td>Masterboard GitHub 部署</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>PAT 已確認可用，維持例行 push</td>
+            <td>Masterboard 部署</td>
+            <td><span class="status-chip ontrack">PAT OK</span></td>
+            <td>例行 push 正常，保持監控。</td>
           </tr>
           <tr>
-            <td>3/12 追蹤大雅委託授權出租/出售</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>優先級2，3/14 前檢核</td>
+            <td>大雅委託追蹤</td>
+            <td><span class="status-chip need-action">逾期檢核</span></td>
+            <td>3/14 前應完成授權，仍待屋主正式回覆。</td>
           </tr>
           <tr>
-            <td>記帳本紀錄維護</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>等待每日費用輸入</td>
-          </tr>
-          <tr>
-            <td>海洋 party 計畫</td>
-            <td><span class="status-chip neutral">❌ 已取消</span></td>
-            <td>預算不足，Mac 指示停止</td>
-          </tr>
-          <tr>
-            <td>系統健康異常排查（reaction/lane/memory）</td>
-            <td><span class="status-chip ontrack">已完成</span></td>
-            <td>2026-03-15 停掉群組 ack reaction、補完記憶檔、留存紀錄</td>
+            <td>記帳本維護</td>
+            <td><span class="status-chip neutral">等資料</span></td>
+            <td>待收到今日費用明細。</td>
           </tr>
         </tbody>
       </table>
@@ -152,8 +139,8 @@
     <article>
       <h2>待確認 / 指令</h2>
       <ul>
-        <li>Google Calendar 授權：需在 Mac 上執行 `python3 ~/.openclaw/workspace/tools/google_calendar.py auth` 才能恢復自動行程。</li>
-        <li>G R 群權限：仍未收到新增訊息，若有需要請再標記我。</li>
+        <li>Google Calendar 授權：需在 Mac 上執行 `python3 ~/.openclaw/workspace/tools/google_calendar.py auth`。</li>
+        <li>10:00 未命名行程：請提供客戶/主題以便追蹤。</li>
       </ul>
     </article>
 

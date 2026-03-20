@@ -2,70 +2,114 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <title>大管家儀表板 — 週五節奏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>睦聚開發 — 大管家儀表板</title>
   <style>
+    * { box-sizing: border-box; }
     :root {
-      font-family: "Noto Sans TC", "PingFang TC", system-ui, sans-serif;
-      color: #111827;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+      color: #1f2937;
     }
     body {
       margin: 0;
-      padding: 24px;
-      background: linear-gradient(135deg, #ede9fe, #cffafe);
+      padding: 0;
+      background: #f3f5f9;
     }
-    header { margin-bottom: 24px; color: #1f2937; }
-    h1 { margin: 0 0 6px; font-size: 30px; letter-spacing: 2px; }
+    header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+    }
     .label {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
-      background: #fbcfe8;
-      color: #9d174d;
-      font-size: 13px;
+      background: #38bdf8;
+      color: #0f172a;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    .subtext { color: #374151; font-size: 14px; margin: 8px 0 0; }
-    .quote { color: #4338ca; font-size: 14px; margin: 4px 0 0; font-weight: 600; }
-    .stack { display: flex; flex-direction: column; gap: 16px; }
-    article {
-      background: #fff;
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
-      border: 1px solid rgba(99, 102, 241, 0.12);
+    .header-right {
+      text-align: right;
     }
-    article h2 { margin-top: 0; font-size: 18px; color: #312e81; letter-spacing: 1px; }
+    .subtext { color: #cbd5f5; font-size: 13px; margin: 6px 0 0; }
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 20px 32px;
+    }
+    article {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px 24px;
+      box-shadow: 0 6px 12px rgba(15, 23, 42, 0.08);
+    }
+    article h2 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      color: #0f172a;
+      letter-spacing: 1px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
     ul { margin: 0; padding-left: 20px; }
-    li { margin-bottom: 6px; line-height: 1.5; color: #1f2937; }
-    table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    th, td { padding: 6px 4px; border-bottom: 1px solid #e0e7ff; vertical-align: top; }
-    th { color: #4338ca; font-weight: 600; }
-    .status-chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    li { margin-bottom: 6px; line-height: 1.6; color: #1f2937; font-size: 0.95rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead { background: #e0f2fe; }
+    th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+    th { color: #0369a1; font-weight: 600; font-size: 0.85rem; }
+    tbody tr:hover { background: #f8fafc; }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
     .ontrack { background: #d1fae5; color: #065f46; }
     .need-action { background: #fef3c7; color: #92400e; }
     .blocked { background: #fee2e2; color: #991b1b; }
-    .neutral { background: #e0e7ff; color: #3730a3; }
-    .note { margin-top: 10px; font-size: 13px; color: #4b5563; }
-    .doc-id { font-size: 12px; color: #6b7280; word-break: break-all; }
-    .source-tag { font-size: 11px; color: #9ca3af; margin-left: 4px; }
+    .neutral { background: #e0f2fe; color: #0369a1; }
+    .note { margin-top: 10px; font-size: 0.8rem; color: #64748b; }
+    .doc-id { font-size: 11px; color: #94a3b8; word-break: break-all; }
+    a { color: #0369a1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    @media (max-width: 720px) {
+      header { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; }
+      .stack { padding: 16px; }
+      article { padding: 16px; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="label">Friday Flow</div>
-    <h1>大管家儀表板 — 週五節奏</h1>
-    <p class="subtext">最後更新：2026-03-20 19:04· 專注今日巡檢與未來十天節點</p>
+    <div>
+      <div class="label">Friday Flow</div>
+      <h1>睦聚開發 — 大管家儀表板</h1>
+      <p class="subtext">週五節奏 · 最後更新：2026-03-20 19:47</p>
+    </div>
   </header>
 
   <section class="stack">
     <article>
       <h2>週五焦點</h2>
       <ul>
-        <li>今日無特別焦點事項。</li>
+        <li>📋 10:00 — 討論彰濱工業區附件內容 (珍姐) [待辦]</li>
       </ul>
       <p class="note">Calendar + 行程表資料同步顯示；若新增活動請於 Google Calendar 或行程表補錄。</p>
     </article>
@@ -73,31 +117,30 @@
     <article>
       <h2>行程 — 今天</h2>
       <ul>
-        <li>📋 10:00 — 會議 — 珍姐 [待辦]</li>
+        <li>📋 10:00 — 討論彰濱工業區附件內容 (珍姐) [待辦]</li>
       </ul>
     </article>
 
     <article>
       <h2>行程 — 未來 10 天</h2>
       <ul>
-        <li>📅 📅 未來 10 天 Google Calendar 行程</li>
-        <li>📅 • 03/21 09:30 逢甲在職專班面試</li>
-        <li>📅 • 03/23 08:00 掃墓</li>
-        <li>📅 • 03/24 09:15 市政南二路</li>
-        <li>📅 • 03/26 13:15 中小企協講座+團拜</li>
-        <li>📅 • 03/27 09:00 沙鹿掃墓 @ 沙鹿</li>
-        <li>📋 3/21｜09:00 — 優先級低 [已排程]</li>
-        <li>📋 3/21｜09:30 — 優先級高 [已排程]</li>
+        <li>📅 03/21 09:30 逢甲在職專班面試</li>
+        <li>📅 03/23 08:00 掃墓</li>
+        <li>📅 03/24 09:15 市政南二路</li>
+        <li>📅 03/26 13:15 中小企協講座+團拜</li>
+        <li>📅 03/27 09:00 沙鹿掃墓 @ 沙鹿</li>
+        <li>📋 3/21｜09:00 — 沙鹿掃墓 [已排程]</li>
+        <li>📋 3/21｜09:30 — 逢甲在職專班面試 [已排程]</li>
       </ul>
     </article>
 
     <article>
       <h2>逾期行程（近三日）</h2>
       <ul>
-        <li>03/19｜15:30 — 下次檢核 — 優先級別1 <span style="color:#dc2626;font-weight:600;">⚡高</span> [已排程]</li>
-        <li>03/19｜15:00 — 新增行程 — 張先生 <span style="color:#d97706;">●中</span> [待辦]</li>
-        <li>03/19｜10:00 — 優先級高 <span style="color:#dc2626;font-weight:600;">⚡高</span> [待辦]</li>
-        <li>03/19｜10:00 — 優先級中 <span style="color:#d97706;">●中</span> [待辦]</li>
+        <li>03/19｜15:30 — 新增行事曆 (優先級別1) <span style="color:#dc2626;font-weight:600;">⚡高</span> [已排程]</li>
+        <li>03/19｜15:00 — 行程標題 (張先生) <span style="color:#d97706;">●中</span> [待辦]</li>
+        <li>03/19｜10:00 — 優先級別第一集 <span style="color:#dc2626;font-weight:600;">⚡高</span> [待辦]</li>
+        <li>03/19｜10:00 — 產業園區標案負責人分配確認 <span style="color:#d97706;">●中</span> [待辦]</li>
       </ul>
     </article>
 
@@ -114,9 +157,9 @@
       <table>
         <thead><tr><th>流程</th><th>狀態</th><th>下一步</th></tr></thead>
         <tbody>
-          <tr><td>07:00 早報 + masterboard</td><td><span class="status-chip ontrack">完成 19:04</span></td><td>整體流程運行正常。</td></tr>
-          <tr><td>14:00 午間校正</td><td><span class="status-chip ontrack">完成 19:04</span></td><td>任務進度更新完成。</td></tr>
-          <tr><td>19:00 晚間收斂</td><td><span class="status-chip ontrack">完成 19:04</span></td><td>今日總結完成。</td></tr>
+          <tr><td>07:00 早報 + masterboard</td><td><span class="status-chip ontrack">完成 19:47</span></td><td>整體流程運行正常。</td></tr>
+          <tr><td>14:00 午間校正</td><td><span class="status-chip ontrack">完成 19:47</span></td><td>任務進度更新完成。</td></tr>
+          <tr><td>19:00 晚間收斂</td><td><span class="status-chip ontrack">完成 19:47</span></td><td>今日總結完成。</td></tr>
         </tbody>
       </table>
     </article>

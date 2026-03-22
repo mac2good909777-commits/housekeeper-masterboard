@@ -2,32 +2,20 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>睦聚開發 — 大管家儀表板</title>
+  <title>睦聚開發—大管家儀表板</title>
   <style>
-    * { box-sizing: border-box; }
     :root {
-      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
-      color: #1f2937;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
+      color: #111827;
     }
     body {
-      margin: 0;
-      padding: 0;
-      background: #f3f5f9;
+      margin: 0; padding: 22px;
+      background: linear-gradient(135deg,#ede9fe,#cffafe);
     }
     header {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 20px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      margin-bottom: 18px; color: #1e293b;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.6rem;
-      letter-spacing: 2px;
-    }
+    h1 { font-size: 26px; letter-spacing: 2px; }
     .label {
       display: inline-flex;
       align-items: center;
@@ -38,187 +26,40 @@
       color: #0f172a;
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1px;
       text-transform: uppercase;
     }
-    .header-right {
-      text-align: right;
-    }
-    .subtext { color: #cbd5f5; font-size: 13px; margin: 6px 0 0; }
-    .stack {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 20px 32px;
-    }
-    article {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px 24px;
-      box-shadow: 0 6px 12px rgba(15, 23, 42, 0.08);
-    }
-    article h2 {
-      margin: 0 0 12px;
-      font-size: 1.05rem;
-      color: #0f172a;
-      letter-spacing: 1px;
-      border-left: 4px solid #38bdf8;
-      padding-left: 10px;
-    }
-    ul { margin: 0; padding-left: 20px; }
-    li { margin-bottom: 6px; line-height: 1.6; color: #1f2937; font-size: 0.95rem; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    thead { background: #e0f2fe; }
-    th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
-    th { color: #0369a1; font-weight: 600; font-size: 0.85rem; }
-    tbody tr:hover { background: #f8fafc; }
-    .status-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-    .ontrack { background: #d1fae5; color: #065f46; }
-    .need-action { background: #fef3c7; color: #92400e; }
-    .blocked { background: #fee2e2; color: #991b1b; }
-    .neutral { background: #e0f2fe; color: #0369a1; }
-    .note { margin-top: 10px; font-size: 0.8rem; color: #64748b; }
-    .doc-id { font-size: 11px; color: #94a3b8; word-break: break-all; }
-    a { color: #0369a1; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    @media (max-width: 720px) {
-      header { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; }
-      .stack { padding: 16px; }
-      article { padding: 16px; }
-    }
+    .subtext { color: #3b444d; font-size: 14px; margin: 8px 0 0; }
+    .quote { color: #4338ca; font-size: 14px; margin: 4px 0 0; font-weight: 600; }
+    .stack { display:flex; flex-direction:column; gap:13px; }
+    article { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 4px 14px rgba(15,23,42,0.11); }
+    article h2 { margin-top:0; font-size: 17px; color: #0f172a; }
+    ul { margin:0; padding-left:20px; color: #1e293b; }
+    li { margin-bottom: 5px; line-height: 1.5; }
+    .note { margin-top:8px; font-size:13px; color:#64748b; }
   </style>
 </head>
 <body>
-  <header>
-    <div>
-      <div class="label">Weekend Mode</div>
-      <h1>睦聚開發 — 大管家儀表板</h1>
-      <p class="subtext">週末模式 · 最後更新：2026-03-22 13:30</p>
-    </div>
-  </header>
-
-  <section class="stack">
-    <article>
-      <h2>週日焦點</h2>
-      <ul>
-        <li>今日無特別焦點事項。</li>
-      </ul>
-      <p class="note">Calendar + 行程表資料同步顯示；若新增活動請於 Google Calendar 或行程表補錄。</p>
-    </article>
-
-    <article>
-      <h2>行程 — 今天</h2>
-      <ul>
-        <li>今日無行程項目。</li>
-      </ul>
-    </article>
-
-    <article>
-      <h2>行程 — 未來 10 天</h2>
-      <ul>
-        <li>📅 03/23 08:00 掃墓</li>
-        <li>📅 03/24 09:15 市政南二路</li>
-        <li>📅 03/26 13:15 中小企協講座+團拜</li>
-        <li>📋 3/23｜14:00 — 聯強 租約 [1-YY]</li>
-        <li>📋 3/23｜14:00 — 臺膠李小姐 (重要人) [1-YY]</li>
-      </ul>
-    </article>
-
-    <article>
-      <h2>逾期行程（近三日）</h2>
-      <ul>
-        <li>03/21｜09:30 — 待辦 [2-YN]</li>
-        <li>03/21｜09:00 — 已排程 [3-NY]</li>
-      </ul>
-    </article>
-
-    <article>
-      <h2>工業地產快照</h2>
-      <ul>
-        <li>今日資料：詳見監控系統。</li>
-        <li>📊 產業資料：<a href="https://docs.google.com/spreadsheets/d/1fXbe8gC56A4NFJuOqM4p2IV2UxvYabs3iX-rTc_L_CU" target="_blank">查看</a></li>
-      </ul>
-    </article>
-
-    <article>
-      <h2>流程節奏</h2>
-      <table>
-        <thead><tr><th>流程</th><th>狀態</th><th>下一步</th></tr></thead>
-        <tbody>
-          <tr><td>07:00 早報 + masterboard</td><td><span class="status-chip ontrack">完成 13:30</span></td><td>整體流程運行正常。</td></tr>
-          <tr><td>14:00 午間校正</td><td><span class="status-chip neutral">排程</span></td><td>視會議結果更新工作內容。</td></tr>
-          <tr><td>19:00 晚間收斂</td><td><span class="status-chip neutral">排程</span></td><td>準備今日總結及未來計劃。</td></tr>
-        </tbody>
-      </table>
-    </article>
-
-    <article>
-      <h2>任務追蹤</h2>
-      <table>
-        <thead><tr><th>任務</th><th>狀態</th><th>備註</th></tr></thead>
-        <tbody>
-          <tr>
-            <td>每日匯報流程建立（早報/午報/晚報）</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>06:50/14:00/19:00 三段式</td>
-          </tr>
-          <tr>
-            <td>Masterboard GitHub 部署</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>PAT 已確認可用，維持例行 push</td>
-          </tr>
-          <tr>
-            <td>3/12 追蹤大雅委託授權出租/出售</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>優先級2，3/14 前檢核</td>
-          </tr>
-          <tr>
-            <td>記帳本紀錄維護</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>等待每日費用輸入</td>
-          </tr>
-          <tr>
-            <td>海洋 party 計畫</td>
-            <td><span class="status-chip neutral">❌ 已取消</span></td>
-            <td>預算不足，Mac 指示停止</td>
-          </tr>
-          <tr>
-            <td>系統健康異常排查（reaction/lane/memory）</td>
-            <td><span class="status-chip ontrack">已完成</span></td>
-            <td>2026-03-15 停掉群組 ack reaction、補完記憶檔、留存紀錄</td>
-          </tr>
-        </tbody>
-      </table>
-    </article>
-
-    <article>
-      <h2>待確認 / 指令</h2>
-      <ul>
-        <li>Masterboard PAT：目前 token 可用，如需替換請提供新 PAT</li>
-      </ul>
-    </article>
-
-    <article>
-      <h2>群組 & 文件對照</h2>
-      <table>
-        <thead><tr><th>群組</th><th>chat_id</th><th>Google Doc ID</th></tr></thead>
-        <tbody>
-          <tr><td>夢想家</td><td>-5189082842</td><td class="doc-id">1dzJS1mJvNqn0ynU-LSOmw2he8F7Q8jupyzzy1rU7OzE</td></tr>
-          <tr><td>文章資訊收集</td><td>-5066112336</td><td class="doc-id">1NTtBz8hmUNFCTE4qV6sWaOePeH2FCnius9n9UiqXGzE</td></tr>
-          <tr><td>財務</td><td>-5131453587</td><td class="doc-id">1oGaTj_oG_GAGYT08f7XQRxHsBqct-hzcx2wD6nEHIC8</td></tr>
-          <tr><td>自動輸入</td><td>-5252940048</td><td class="doc-id">1-G7RDo4F7A7NdWRVFtymH1CDOHGN6onBnAA7y-P4kG8</td></tr>
-          <tr><td>行銷</td><td>-5197008668</td><td class="doc-id">1EWDtqw5SztXec2MtRfljtj0dREu2zpRZbQ49zswnwSU</td></tr>
-        </tbody>
-      </table>
-    </article>
-  </section>
+<header>
+<div class="label">Weekend Mode</div>
+<h1>睦聚開發—大管家儀表板</h1>
+<p class="subtext">最後更新：2026-03-21 09:55</p>
+<p class="quote">今日金句：相信努力，累積才有未來。</p>
+</header>
+<section class="stack">
+<article>
+<h2>快報精華</h2>
+<ul>
+<li>09:00｜沙鹿掃墓（已排程）</li>
+<li>09:30｜逢甲在職專班面試（待辦，高/中優先級）</li>
+</ul>
+</article>
+<article>
+<h2>其他說明</h2>
+<ul>
+<li>今日 Calendar 無新行程</li>
+<li>如有異動即時反映於本頁與群組</li>
+</ul>
+</article>
+</section>
 </body>
 </html>

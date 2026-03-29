@@ -10,60 +10,30 @@
       font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
       color: #1f2937;
     }
-    body {
-      margin: 0;
-      padding: 0;
-      background: #f3f5f9;
-    }
+    body { margin: 0; padding: 0; background: #f3f5f9; }
     header {
-      background: #0f172a;
-      color: #ffffff;
+      background: #0f172a; color: #fff;
       padding: 20px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.6rem;
-      letter-spacing: 2px;
-    }
+    header h1 { margin: 0; font-size: 1.6rem; letter-spacing: 2px; }
     .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: #38bdf8;
-      color: #0f172a;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .header-right {
-      text-align: right;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 999px;
+      background: #38bdf8; color: #0f172a;
+      font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
     }
     .subtext { color: #cbd5f5; font-size: 13px; margin: 6px 0 0; }
     .stack {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding: 20px 32px;
+      display: flex; flex-direction: column; gap: 16px; padding: 20px 32px;
     }
     article {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px 24px;
-      box-shadow: 0 6px 12px rgba(15, 23, 42, 0.08);
+      background: #fff; border-radius: 12px;
+      padding: 20px 24px; box-shadow: 0 6px 12px rgba(15,23,42,0.08);
     }
     article h2 {
-      margin: 0 0 12px;
-      font-size: 1.05rem;
-      color: #0f172a;
-      letter-spacing: 1px;
-      border-left: 4px solid #38bdf8;
-      padding-left: 10px;
+      margin: 0 0 12px; font-size: 1.05rem; color: #0f172a;
+      letter-spacing: 1px; border-left: 4px solid #38bdf8; padding-left: 10px;
     }
     ul { margin: 0; padding-left: 20px; }
     li { margin-bottom: 6px; line-height: 1.6; color: #1f2937; font-size: 0.95rem; }
@@ -73,20 +43,14 @@
     th { color: #0369a1; font-weight: 600; font-size: 0.85rem; }
     tbody tr:hover { background: #f8fafc; }
     .status-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 600;
     }
     .ontrack { background: #d1fae5; color: #065f46; }
     .need-action { background: #fef3c7; color: #92400e; }
     .blocked { background: #fee2e2; color: #991b1b; }
     .neutral { background: #e0f2fe; color: #0369a1; }
     .note { margin-top: 10px; font-size: 0.8rem; color: #64748b; }
-    .doc-id { font-size: 11px; color: #94a3b8; word-break: break-all; }
     a { color: #0369a1; text-decoration: none; }
     a:hover { text-decoration: underline; }
     @media (max-width: 720px) {
@@ -101,77 +65,105 @@
     <div>
       <div class="label">Weekend Mode</div>
       <h1>睦聚開發 — 大管家儀表板</h1>
-      <p class="subtext">週末模式 · 最後更新：2026-03-29 06:00</p>
+      <p class="subtext">週末模式 · 最後更新：2026-03-29 21:44</p>
     </div>
   </header>
 
   <section class="stack">
+    <!-- 1. 今日提醒 — 同 Telegram「📌 今日提醒」 -->
     <article>
-      <h2>週日焦點</h2>
+      <h2>📌 今日提醒</h2>
       <ul>
-        <li>今日無特別焦點事項。</li>
+        <li><span class="status-chip need-action">進行中</span> 記帳本紀錄維護 — 等待每日費用輸入</li>
       </ul>
-      <p class="note">Calendar + 行程表資料同步顯示；若新增活動請於 Google Calendar 或行程表補錄。</p>
     </article>
 
+    <!-- 2. 行程今天 — 同 Telegram「🗓️ 行程—今天」 -->
     <article>
-      <h2>行程 — 今天</h2>
+      <h2>🗓️ 行程 — 今天</h2>
       <ul>
         <li>今日無行程項目。</li>
       </ul>
     </article>
 
+    <!-- 3. 行程未來 — 同 Telegram「🗓️ 行程—未來10天」 -->
     <article>
-      <h2>行程 — 未來 10 天</h2>
+      <h2>🗓️ 行程 — 未來 10 天</h2>
       <ul>
         <li>📅 03/30 18:00 TC8 聚會</li>
         <li>📅 04/02 19:00 全球資產 進欣昱</li>
       </ul>
     </article>
 
+    <!-- 4. 逾期行程（Dashboard 獨有） -->
     <article>
-      <h2>逾期行程（近三日）</h2>
+      <h2>⚠️ 逾期行程</h2>
       <ul>
-        <li>03/23｜14:00 — 聯強 租約 [1-YY]</li>
-        <li>03/23｜14:00 — 臺膠李小姐 (重要人) [1-YY]</li>
+        <li>3/25｜提供 (李協理) </li>
+        <li>3/24｜09:30 — 找搬家公司 (市政南二路) [待辦]</li>
+        <li>3/23｜15:00 — 大統益 出租需求 確認什麼時候進行？ (新增買方) </li>
+        <li>3/23｜14:00 — 5F&雲倉補上 (聯強 租約) [待辦]</li>
+        <li>3/23｜14:00 — *4月中買方聯繫 報告狀況 (臺膠李小姐) [進行中]</li>
       </ul>
     </article>
 
+    <!-- 5. 物件&園區 — 同 Telegram「🏭 物件&園區」 -->
     <article>
-      <h2>工業地產快照</h2>
+      <h2>🏭 物件 & 園區</h2>
       <ul>
-        <li><strong>今日新增：0 筆</strong>（資料時間：2026-03-28 18:45:06）</li>
-        <li>📜 不動產法規政策資訊：暫無新增 <a href="https://docs.google.com/spreadsheets/d/1hfUg67yegCZz6DttU2-udgADc3jfmAfs1m1bOcB3eKg" target="_blank">查看</a></li>
-        <li>🏗️ 不動產產業資訊：暫無新增 <a href="https://docs.google.com/spreadsheets/d/1fXbe8gC56A4NFJuOqM4p2IV2UxvYabs3iX-rTc_L_CU" target="_blank">查看</a></li>
+        <li>🏠 A.台中工業不動產物件：暫無資料</li>
+        <li>🏭 B.產業園區物件：暫無資料</li>
+        <li class="note" style="color:#94a3b8;font-size:0.8rem;">資料時間：2026-03-29 19:07:10</li>
       </ul>
     </article>
 
+    <!-- 6. 市場情報 — 同 Telegram「📰 市場情報」但更詳細 -->
     <article>
-      <h2>流程節奏</h2>
-      <table>
-        <thead><tr><th>流程</th><th>狀態</th><th>下一步</th></tr></thead>
-        <tbody>
-          <tr><td>07:00 早報 + masterboard</td><td><span class="status-chip neutral">排程</span></td><td>—</td></tr>
-          <tr><td>14:00 午間校正</td><td><span class="status-chip neutral">排程</span></td><td>視會議結果更新工作內容。</td></tr>
-          <tr><td>19:00 晚間收斂</td><td><span class="status-chip neutral">排程</span></td><td>準備今日總結及未來計劃。</td></tr>
-        </tbody>
-      </table>
+      <h2>📰 市場情報</h2>
+      <ul>
+        <li><strong>📜 C.不動產法規政策資訊：0 筆</strong> <a href="https://docs.google.com/spreadsheets/d/1hfUg67yegCZz6DttU2-udgADc3jfmAfs1m1bOcB3eKg" target="_blank">查看 Sheet</a></li>
+        <li style="margin-left:16px;color:#94a3b8;">暫無新增</li>
+        <li><strong>🏗️ D.不動產產業資訊：0 筆</strong> <a href="https://docs.google.com/spreadsheets/d/1fXbe8gC56A4NFJuOqM4p2IV2UxvYabs3iX-rTc_L_CU" target="_blank">查看 Sheet</a></li>
+        <li style="margin-left:16px;color:#94a3b8;">暫無新增</li>
+        <li style="margin-top:8px;">📄 <a href="https://docs.google.com/document/d/1vwuvVA2w83znsOkNXbV7MZ9RvW-c-9Qa7c42i6r3vr8" target="_blank">完整歸納文件</a></li>
+      </ul>
     </article>
 
+    <!-- 7. 任務追蹤（Dashboard 獨有） -->
     <article>
-      <h2>任務追蹤</h2>
+      <h2>📋 任務追蹤</h2>
       <table>
         <thead><tr><th>任務</th><th>狀態</th><th>備註</th></tr></thead>
         <tbody>
           <tr>
-            <td>每日匯報流程建立（早報/午報/晚報）</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>06:50/14:00/19:00 三段式</td>
+            <td>每日匯報流程（早報+晚報二段式）</td>
+            <td><span class="status-chip ontrack">已完成</span></td>
+            <td>06:30 早報 / 19:00 晚報，讀 report_data.json</td>
           </tr>
           <tr>
             <td>Masterboard GitHub 部署</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>PAT 已確認可用，維持例行 push</td>
+            <td><span class="status-chip ontrack">已完成</span></td>
+            <td>06:00 LaunchAgent 自動更新</td>
+          </tr>
+          <tr>
+            <td>匯報格式統一（Telegram↔Dashboard）</td>
+            <td><span class="status-chip ontrack">已完成</span></td>
+            <td>區塊名稱已對齊：物件&園區、市場情報</td>
+          </tr>
+          <tr>
+            <td>C/D 資料品質改善</td>
+            <td><span class="status-chip ontrack">已完成</span></td>
+            <td>日期過濾 + 業務應用建議欄位</td>
+          </tr>
+          <tr>
+            <td>report_data.json 寫入順序修正</td>
+            <td><span class="status-chip ontrack">已完成</span></td>
+            <td>JSON 先寫再跑 Masterboard，解決 race condition</td>
+          </tr>
+          <tr>
+            <td>行程表欄位對照修正（9欄）</td>
+            <td><span class="status-chip ontrack">已完成</span></td>
+            <td>parse_schedule 已修正為正確的 A-I 對應</td>
           </tr>
           <tr>
             <td>記帳本紀錄維護</td>
@@ -183,32 +175,28 @@
             <td><span class="status-chip neutral">❌ 已取消</span></td>
             <td>預算不足，Mac 指示停止</td>
           </tr>
-          <tr>
-            <td>系統健康異常排查（reaction/lane/memory）</td>
-            <td><span class="status-chip ontrack">已完成</span></td>
-            <td>2026-03-15 停掉群組 ack reaction、補完記憶檔、留存紀錄</td>
-          </tr>
         </tbody>
       </table>
     </article>
 
+    <!-- 8. 待確認（Dashboard 獨有） -->
     <article>
-      <h2>待確認 / 指令</h2>
+      <h2>❓ 待確認 / 指令</h2>
       <ul>
-        <li>Masterboard PAT：目前 token 可用，如需替換請提供新 PAT</li>
+        <li>3 個失敗 LaunchAgent：reminder / queue-checker / auto-deploy 仍為 exit 2/127</li>
+        <li>RETCP 排程重複：OC cron 和 CCW scheduled tasks 都有 RETCP 週度/月度觸發，需決定保留哪一邊</li>
       </ul>
     </article>
 
+    <!-- 9. 流程節奏 -->
     <article>
-      <h2>群組 & 文件對照</h2>
+      <h2>⏰ 流程節奏</h2>
       <table>
-        <thead><tr><th>群組</th><th>chat_id</th><th>Google Doc ID</th></tr></thead>
+        <thead><tr><th>流程</th><th>狀態</th><th>下一步</th></tr></thead>
         <tbody>
-          <tr><td>夢想家</td><td>-5189082842</td><td class="doc-id">1dzJS1mJvNqn0ynU-LSOmw2he8F7Q8jupyzzy1rU7OzE</td></tr>
-          <tr><td>文章資訊收集</td><td>-5066112336</td><td class="doc-id">1NTtBz8hmUNFCTE4qV6sWaOePeH2FCnius9n9UiqXGzE</td></tr>
-          <tr><td>財務</td><td>-5131453587</td><td class="doc-id">1oGaTj_oG_GAGYT08f7XQRxHsBqct-hzcx2wD6nEHIC8</td></tr>
-          <tr><td>自動輸入</td><td>-5252940048</td><td class="doc-id">1-G7RDo4F7A7NdWRVFtymH1CDOHGN6onBnAA7y-P4kG8</td></tr>
-          <tr><td>行銷</td><td>-5197008668</td><td class="doc-id">1EWDtqw5SztXec2MtRfljtj0dREu2zpRZbQ49zswnwSU</td></tr>
+          <tr><td>07:00 早報 + masterboard</td><td><span class="status-chip ontrack">完成 21:44</span></td><td>整體流程運行正常。</td></tr>
+          <tr><td>14:00 午間校正</td><td><span class="status-chip ontrack">完成 21:44</span></td><td>任務進度更新完成。</td></tr>
+          <tr><td>19:00 晚間收斂</td><td><span class="status-chip ontrack">完成 21:44</span></td><td>今日總結完成。</td></tr>
         </tbody>
       </table>
     </article>

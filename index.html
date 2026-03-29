@@ -65,7 +65,7 @@
     <div>
       <div class="label">Monday Momentum</div>
       <h1>睦聚開發 — 大管家儀表板</h1>
-      <p class="subtext">週一衝刺 · 最後更新：2026-03-30 06:00</p>
+      <p class="subtext">週一衝刺 · 最後更新：2026-03-30 07:04</p>
     </div>
   </header>
 
@@ -184,7 +184,8 @@
       <h2>❓ 待確認 / 指令</h2>
       <ul>
         <li>3 個失敗 LaunchAgent：reminder / queue-checker / auto-deploy 仍為 exit 2/127</li>
-        <li>RETCP 排程重複：OC cron 和 CCW scheduled tasks 都有 RETCP 週度/月度觸發，需決定保留哪一邊</li>
+        <li>~~RETCP 排程重複~~：✅ 已解決：mm cron 全部停用，由 CCW Scheduled Tasks 接管</li>
+        <li>CCW Processor 頻率調整：已改為每 30 分鐘，限工作時間 06:00~22:00（待部署 plist）</li>
       </ul>
     </article>
 
@@ -194,9 +195,9 @@
       <table>
         <thead><tr><th>流程</th><th>狀態</th><th>下一步</th></tr></thead>
         <tbody>
-          <tr><td>07:00 早報 + masterboard</td><td><span class="status-chip neutral">排程</span></td><td>—</td></tr>
-          <tr><td>14:00 午間校正</td><td><span class="status-chip neutral">排程</span></td><td>視會議結果更新工作內容。</td></tr>
-          <tr><td>19:00 晚間收斂</td><td><span class="status-chip neutral">排程</span></td><td>準備今日總結及未來計劃。</td></tr>
+          <tr><td>06:00 資料預跑 → 06:30 早報</td><td><span class="status-chip ontrack">完成 07:04</span></td><td>LaunchAgent → JSON → 大管家 Telegram</td></tr>
+          <tr><td>CCW Processor（每30分鐘）</td><td><span class="status-chip ontrack">運行中</span></td><td>06:00~22:00 掃 Queue Sheet</td></tr>
+          <tr><td>18:50 資料預跑 → 19:00 晚報</td><td><span class="status-chip neutral">排程</span></td><td>行程回顧 + 明日計劃</td></tr>
         </tbody>
       </table>
     </article>

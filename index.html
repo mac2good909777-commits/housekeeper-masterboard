@@ -63,9 +63,9 @@
 <body>
   <header>
     <div>
-      <div class="label">Friday Flow</div>
+      <div class="label">Weekend Mode</div>
       <h1>睦聚開發 — 大管家儀表板</h1>
-      <p class="subtext">週五節奏 · 最後更新：2026-04-10 06:10</p>
+      <p class="subtext">週末模式 · 最後更新：2026-04-11 06:10</p>
     </div>
   </header>
 
@@ -74,7 +74,7 @@
     <article>
       <h2>📌 今日提醒</h2>
       <ul>
-        <li><span class="status-chip need-action">進行中</span> 記帳本紀錄維護 — 等待每日費用輸入</li>
+        <li>無阻塞事項 ✅</li>
       </ul>
     </article>
 
@@ -82,21 +82,14 @@
     <article>
       <h2>🗓️ 行程 — 今天</h2>
       <ul>
-        <li>📅 04/10 10:00 連絡三發江董 約下周時間</li>
-        <li>📅 04/10 12:00 李總吃飯</li>
-        <li>📅 04/10 15:00 老周/X公司</li>
-        <li>📅 04/10 17:00 接綾真</li>
+        <li>📅 04/11 15:30 佑謙籃球</li>
       </ul>
     </article>
 
-    <!-- 3. 行程未來 — 同 Telegram「🗓️ 行程—未來10天」 -->
+    <!-- 3. 行程未來 — 同 Telegram「🗓️ 行程—未來兩週」 -->
     <article>
-      <h2>🗓️ 行程 — 未來 10 天</h2>
+      <h2>🗓️ 行程 — 未來兩週</h2>
       <ul>
-        <li>📅 04/10 10:00 連絡三發江董 約下周時間</li>
-        <li>📅 04/10 12:00 李總吃飯</li>
-        <li>📅 04/10 15:00 老周/X公司</li>
-        <li>📅 04/10 17:00 接綾真</li>
         <li>📅 04/11 15:30 佑謙籃球</li>
         <li>📅 04/15 08:00 市政南二路</li>
         <li>📅 04/15 09:30 瑞禾會議</li>
@@ -123,7 +116,7 @@
       <ul>
         <li>🏠 A.台中工業不動產物件：暫無新增 <a href="https://docs.google.com/spreadsheets/d/1xbNKY6mzpkUdkey8ycoJbBJ57v2Ckiroo_IEDgfNo8I" target="_blank">📊 查看</a></li>
         <li>🏭 B.產業園區物件：暫無新增 <a href="https://docs.google.com/spreadsheets/d/1sB9GcvWICKVG2lXvmzOGsoQOtaVm0SuuhqsLWRZ69pA" target="_blank">📊 查看</a></li>
-        <li class="note" style="color:#94a3b8;font-size:0.8rem;">資料時間：2026-04-10 06:10:00</li>
+        <li class="note" style="color:#94a3b8;font-size:0.8rem;">資料時間：2026-04-11 06:10:01</li>
       </ul>
     </article>
 
@@ -160,32 +153,22 @@
           <tr>
             <td>匯報格式統一（Telegram↔Dashboard）</td>
             <td><span class="status-chip ontrack">已完成</span></td>
-            <td>區塊名稱已對齊：物件&園區、市場情報</td>
+            <td>區塊名稱已對齊</td>
           </tr>
           <tr>
-            <td>C/D 資料品質改善</td>
+            <td>C/D/E 資料品質改善</td>
             <td><span class="status-chip ontrack">已完成</span></td>
-            <td>日期過濾 + 業務應用建議欄位</td>
+            <td>標籤修正 + E 政府公告新增</td>
           </tr>
           <tr>
-            <td>report_data.json 寫入順序修正</td>
+            <td>行程表兩區拆分</td>
             <td><span class="status-chip ontrack">已完成</span></td>
-            <td>JSON 先寫再跑 Masterboard，解決 race condition</td>
+            <td>今明 / 未來兩週，Calendar + 行程表</td>
           </tr>
           <tr>
-            <td>行程表欄位對照修正（9欄）</td>
+            <td>天氣修復</td>
             <td><span class="status-chip ontrack">已完成</span></td>
-            <td>parse_schedule 已修正為正確的 A-I 對應</td>
-          </tr>
-          <tr>
-            <td>記帳本紀錄維護</td>
-            <td><span class="status-chip need-action">進行中</span></td>
-            <td>等待每日費用輸入</td>
-          </tr>
-          <tr>
-            <td>海洋 party 計畫</td>
-            <td><span class="status-chip neutral">❌ 已取消</span></td>
-            <td>預算不足，Mac 指示停止</td>
+            <td>wttr.in User-Agent + 英文城市</td>
           </tr>
         </tbody>
       </table>
